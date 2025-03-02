@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:memory_box/home_screen/home_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:memory_box/constants/colors_app/colors_app.dart';
+import 'package:memory_box/constants/fonts/inter_font.dart';
+import 'package:memory_box/screens/home_screen/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -40,7 +43,22 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
         ),
         child: Center(
-          child: Text('MemoryBox'),
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 50.0, vertical: 17.0),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(75.0),
+              color: ColorsApp.white,
+            ),
+            child: Text(
+              'MemoryBox',
+              style: interTextStyle(
+                fontSize: 30.0,
+                fontWeight: FontWeight.w400,
+                color: ColorsApp.purple,
+                letterSpacing: 6.0,
+              ),
+            ),
+          ),
         ),
       ),
     );
