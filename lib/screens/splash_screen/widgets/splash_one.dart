@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:memory_box/constants/colors_app/colors_app.dart';
 import 'package:memory_box/constants/fonts/inter_font.dart';
 
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
+class SplashOne extends StatelessWidget {
+  const SplashOne({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class MyWidget extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color.fromRGBO(128, 119, 228, 1),
+              ColorsApp.purple128,
               Color.fromRGBO(195, 132, 200, 1),
               Color.fromRGBO(225, 144, 175, 1),
             ],
@@ -30,10 +30,10 @@ class MyWidget extends StatelessWidget {
             ),
             child: Text(
               'MemoryBox',
-              style: interTextStyle(
+              style: robotoTextStyle(
                 fontSize: 30.0,
                 fontWeight: FontWeight.w400,
-                color: ColorsApp.purple,
+                color: ColorsApp.purple128,
                 letterSpacing: 6.0,
               ),
             ),

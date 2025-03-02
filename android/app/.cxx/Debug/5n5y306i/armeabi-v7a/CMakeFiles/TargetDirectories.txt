@@ -1,0 +1,2 @@
+C:/Users/max/Desktop/SpaceLab/HomeWorks/Projects/memory_box/android/app/.cxx/Debug/5n5y306i/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/max/Desktop/SpaceLab/HomeWorks/Projects/memory_box/android/app/.cxx/Debug/5n5y306i/armeabi-v7a/CMakeFiles/rebuild_cache.dir
