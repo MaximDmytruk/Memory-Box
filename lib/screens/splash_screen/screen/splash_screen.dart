@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:memory_box/screens/home_screen/home_screen.dart';
 import 'package:memory_box/screens/splash_screen/widgets/splash_eight.dart';
 import 'package:memory_box/screens/splash_screen/widgets/splash_five.dart';
 import 'package:memory_box/screens/splash_screen/widgets/splash_four.dart';
@@ -20,13 +21,13 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    // Future.delayed(Duration(seconds: 2), () {
-    //   if (mounted) {
-    //     Navigator.of(context).pushReplacementNamed(
-    //       HomeScreen.routeName,
-    //     );
-    //   }
-    // });
+    Future.delayed(Duration(seconds: 2), () {
+      if (mounted) {
+        Navigator.of(context).pushReplacementNamed(
+          HomeScreen.routeName,
+        );
+      }
+    });
     super.initState();
   }
 
