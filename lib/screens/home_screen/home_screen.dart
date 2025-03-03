@@ -13,22 +13,14 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    
 
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: Stack(
         children: [
-          SizedBox(
-            height: size.height * 0.4,
-            width: size.width,
-            child: CustomPaint(
-              size: Size.infinite,
-              painter: CirclePainter(),
-            ),
-          ),
-          Center(
-            child: Text('Hello World!'),
-          ),
+         
+          
         ],
       ),
     );
