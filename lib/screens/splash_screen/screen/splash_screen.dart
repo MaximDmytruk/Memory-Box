@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memory_box/screens/home_screen/home_screen.dart';
-import 'package:memory_box/screens/splash_screen/widgets/splash_eight.dart';
-import 'package:memory_box/screens/splash_screen/widgets/splash_five.dart';
-import 'package:memory_box/screens/splash_screen/widgets/splash_four.dart';
 import 'package:memory_box/screens/splash_screen/widgets/splash_nine.dart';
-import 'package:memory_box/screens/splash_screen/widgets/splash_seven.dart';
-import 'package:memory_box/screens/splash_screen/widgets/splash_six.dart';
-import 'package:memory_box/screens/splash_screen/widgets/splash_three.dart';
-import 'package:memory_box/screens/splash_screen/widgets/splash_two.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

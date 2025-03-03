@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:memory_box/painter/custom_painter.dart';
+import 'package:memory_box/constants/colors_app/colors_app.dart';
+import 'package:memory_box/widgets/custom_background/custom_background.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,15 +14,15 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    
-
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: Stack(
-        children: [
-         
-          
-        ],
+    return CustomBackground(
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Center(
+          child: Text('Hello world',
+              style: TextStyle(
+                color: ColorsApp.black,
+              ),),
+        ),
       ),
     );
   }

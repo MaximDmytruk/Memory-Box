@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:memory_box/constants/colors_app/colors_app.dart';
 
-class CustomBackgroundPainter extends CustomPainter {
+class CirclePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final Paint paint = Paint();
