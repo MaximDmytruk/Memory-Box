@@ -18,10 +18,12 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Center(
-          child: Text('Hello world',
-              style: TextStyle(
-                color: ColorsApp.black,
-              ),),
+          child: Text(
+            'Hello world',
+            style: TextStyle(
+              color: ColorsApp.black,
+            ),
+          ),
         ),
       ),
     );

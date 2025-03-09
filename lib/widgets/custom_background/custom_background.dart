@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:memory_box/constants/colors_app/colors_app.dart';
 
-import 'package:memory_box/constants/painter/custom_background_painter.dart';
+import 'package:memory_box/constants/painter/circle_painter.dart';
 
 
 

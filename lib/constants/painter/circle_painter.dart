@@ -14,14 +14,13 @@ class CirclePainter extends CustomPainter {
 
     path.quadraticBezierTo(
       size.width * 0.7,
-      size.height*1.1,
-      size.width ,
-      size.height*0.8,
+      size.height * 1.1,
+      size.width,
+      size.height * 0.8,
     );
     path.lineTo(size.width, 0);
     path.lineTo(0, 0);
 
-    
     canvas.drawPath(path, paint);
   }
 

@@ -4,8 +4,8 @@ import 'package:memory_box/constants/colors_app/colors_app.dart';
 import 'package:memory_box/constants/fonts/inter_font.dart';
 import 'package:memory_box/constants/icons_app/icons_app.dart';
 
-class SplashSix extends StatelessWidget {
-  const SplashSix({super.key});
+class SplashFirst extends StatelessWidget {
+  const SplashFirst({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +14,8 @@ class SplashSix extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            ColorsApp.purple128,
-            ColorsApp.orange241,
+            ColorsApp.purple140,
+            ColorsApp.blue103,
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
