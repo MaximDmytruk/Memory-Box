@@ -57,23 +57,33 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: ColorsApp.transparent,
-      body: Center(
-        child: _getScreen(
-          _selectedIndex,
+    return CustomBackground(
+      child: Scaffold(
+        backgroundColor: ColorsApp.transparent,
+        body: Center(
+          child: _getScreen(
+            _selectedIndex,
+          ),
         ),
-      ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-            color: ColorsApp.transparent,
-            boxShadow: [
-              BoxShadow(
-                color: ColorsApp.black.withAlpha(50),
-                blurRadius: 50,
-                spreadRadius: 10,
-              ),
-            ],
+        bottomNavigationBar: Container(
+          decoration: BoxDecoration(
+              color: ColorsApp.transparent,
+              boxShadow: [
+                BoxShadow(
+                  color: ColorsApp.black.withAlpha(50),
+                  blurRadius: 50,
+                  spreadRadius: 10,
+                ),
+              ],
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(
+                  20.0,
+                ),
+                topRight: Radius.circular(
+                  20.0,
+                ),
+              )),
+          child: ClipRRect(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(
                 20.0,
@@ -81,148 +91,140 @@ class _HomeScreenState extends State<HomeScreen> {
               topRight: Radius.circular(
                 20.0,
               ),
-            )),
-        child: ClipRRect(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(
-              20.0,
             ),
-            topRight: Radius.circular(
-              20.0,
+            child: BottomNavigationBar(
+              currentIndex: _selectedIndex,
+              onTap: _onSelectedTab,
+              backgroundColor: ColorsApp.white246,
+              type: BottomNavigationBarType.fixed,
+              elevation: 0,
+              items: [
+                BottomNavigationBarItem(
+                  icon: Column(
+                    children: [
+                      SvgPicture.asset(
+                        IconsApp.home,
+                        colorFilter: ColorFilter.mode(
+                          _selectedIndex == 0
+                              ? ColorsApp.purple140
+                              : ColorsApp.black58,
+                          BlendMode.srcIn,
+                        ),
+                      ),
+                      Text(
+                        'Главная',
+                        style: robotoTextStyle(
+                          fontSize: 10.0,
+                          fontWeight: FontWeight.w400,
+                          color: _selectedIndex == 0
+                              ? ColorsApp.purple140
+                              : ColorsApp.black58,
+                        ),
+                      ),
+                    ],
+                  ),
+                  label: '',
+                ),
+                BottomNavigationBarItem(
+                  icon: Column(
+                    children: [
+                      SvgPicture.asset(
+                        IconsApp.category,
+                        colorFilter: ColorFilter.mode(
+                          _selectedIndex == 1
+                              ? ColorsApp.purple140
+                              : ColorsApp.black58,
+                          BlendMode.srcIn,
+                        ),
+                      ),
+                      Text(
+                        'Подборки',
+                        style: robotoTextStyle(
+                          fontSize: 10.0,
+                          fontWeight: FontWeight.w400,
+                          color: _selectedIndex == 1
+                              ? ColorsApp.purple140
+                              : ColorsApp.black58,
+                        ),
+                      ),
+                    ],
+                  ),
+                  label: '',
+                ),
+                BottomNavigationBarItem(
+                  icon: Column(
+                    children: [
+                      SvgPicture.asset(
+                        IconsApp.microfoneOrangeBackground,
+                        width: 46.0,
+                        height: 46.0,
+                      ),
+                      Text(
+                        'Запись',
+                        style: robotoTextStyle(
+                          fontSize: 10.0,
+                          fontWeight: FontWeight.w400,
+                          color: ColorsApp.orange241,
+                        ),
+                      ),
+                    ],
+                  ),
+                  label: '',
+                ),
+                BottomNavigationBarItem(
+                  icon: Column(
+                    children: [
+                      SvgPicture.asset(
+                        IconsApp.paper,
+                        colorFilter: ColorFilter.mode(
+                          _selectedIndex == 3
+                              ? ColorsApp.purple140
+                              : ColorsApp.black58,
+                          BlendMode.srcIn,
+                        ),
+                      ),
+                      Text(
+                        'Аудиозаписи',
+                        style: robotoTextStyle(
+                          fontSize: 10.0,
+                          fontWeight: FontWeight.w400,
+                          color: _selectedIndex == 3
+                              ? ColorsApp.purple140
+                              : ColorsApp.black58,
+                        ),
+                      ),
+                    ],
+                  ),
+                  label: '',
+                ),
+                BottomNavigationBarItem(
+                  icon: Column(
+                    children: [
+                      SvgPicture.asset(
+                        IconsApp.profile,
+                        colorFilter: ColorFilter.mode(
+                          _selectedIndex == 4
+                              ? ColorsApp.purple140
+                              : ColorsApp.black58,
+                          BlendMode.srcIn,
+                        ),
+                      ),
+                      Text(
+                        'Профиль',
+                        style: robotoTextStyle(
+                          fontSize: 10.0,
+                          fontWeight: FontWeight.w400,
+                          color: _selectedIndex == 4
+                              ? ColorsApp.purple140
+                              : ColorsApp.black58,
+                        ),
+                      ),
+                    ],
+                  ),
+                  label: '',
+                ),
+              ],
             ),
-          ),
-          child: BottomNavigationBar(
-            currentIndex: _selectedIndex,
-            onTap: _onSelectedTab,
-            backgroundColor: ColorsApp.white246,
-            type: BottomNavigationBarType.fixed,
-            elevation: 0,
-            items: [
-              BottomNavigationBarItem(
-                icon: Column(
-                  children: [
-                    SvgPicture.asset(
-                      IconsApp.home,
-                      colorFilter: ColorFilter.mode(
-                        _selectedIndex == 0
-                            ? ColorsApp.purple140
-                            : ColorsApp.black58,
-                        BlendMode.srcIn,
-                      ),
-                    ),
-                    Text(
-                      'Главная',
-                      style: robotoTextStyle(
-                        fontSize: 10.0,
-                        fontWeight: FontWeight.w400,
-                        color: _selectedIndex == 0
-                            ? ColorsApp.purple140
-                            : ColorsApp.black58,
-                      ),
-                    ),
-                  ],
-                ),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Column(
-                  children: [
-                    SvgPicture.asset(
-                      IconsApp.category,
-                      colorFilter: ColorFilter.mode(
-                        _selectedIndex == 1
-                            ? ColorsApp.purple140
-                            : ColorsApp.black58,
-                        BlendMode.srcIn,
-                      ),
-                    ),
-                    Text(
-                      'Подборки',
-                      style: robotoTextStyle(
-                        fontSize: 10.0,
-                        fontWeight: FontWeight.w400,
-                        color: _selectedIndex == 1
-                            ? ColorsApp.purple140
-                            : ColorsApp.black58,
-                      ),
-                    ),
-                  ],
-                ),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Column(
-                  children: [
-                    SvgPicture.asset(
-                      IconsApp.microfoneOrangeBackground,
-                      width: 46.0,
-                      height: 46.0,
-                    ),
-                    Text(
-                      'Запись',
-                      style: robotoTextStyle(
-                        fontSize: 10.0,
-                        fontWeight: FontWeight.w400,
-                        color: ColorsApp.orange241,
-                      ),
-                    ),
-                  ],
-                ),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Column(
-                  children: [
-                    SvgPicture.asset(
-                      IconsApp.paper,
-                      colorFilter: ColorFilter.mode(
-                        _selectedIndex == 3
-                            ? ColorsApp.purple140
-                            : ColorsApp.black58,
-                        BlendMode.srcIn,
-                      ),
-                    ),
-                    Text(
-                      'Аудиозаписи',
-                      style: robotoTextStyle(
-                        fontSize: 10.0,
-                        fontWeight: FontWeight.w400,
-                        color: _selectedIndex == 3
-                            ? ColorsApp.purple140
-                            : ColorsApp.black58,
-                      ),
-                    ),
-                  ],
-                ),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Column(
-                  children: [
-                    SvgPicture.asset(
-                      IconsApp.profile,
-                      colorFilter: ColorFilter.mode(
-                        _selectedIndex == 4
-                            ? ColorsApp.purple140
-                            : ColorsApp.black58,
-                        BlendMode.srcIn,
-                      ),
-                    ),
-                    Text(
-                      'Профиль',
-                      style: robotoTextStyle(
-                        fontSize: 10.0,
-                        fontWeight: FontWeight.w400,
-                        color: _selectedIndex == 4
-                            ? ColorsApp.purple140
-                            : ColorsApp.black58,
-                      ),
-                    ),
-                  ],
-                ),
-                label: '',
-              ),
-            ],
           ),
         ),
       ),
