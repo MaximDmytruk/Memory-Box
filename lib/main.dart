@@ -12,17 +12,12 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // color: ColorsApp.white246,
-      // theme: ThemeData(
-      //   scaffoldBackgroundColor: ColorsApp.white246,
-      // ),
+    
       title: "Memory Box",
       routes: {
         SplashScreen.routeName: (context) => SplashScreen(),
         HomeScreen.routeName: (context) => HomeScreen(),
-        // HomeScreen.routeName: (context) => CustomBackground(
-        //       child: HomeScreen(),
-        //     ),
+     
       },
       initialRoute: SplashScreen.routeName,
     );
