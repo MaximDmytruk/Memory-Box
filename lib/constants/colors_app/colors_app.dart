@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ColorsApp {
+ static const Color transparent = Colors.transparent;
+  
   static const Color black = Colors.black;
+  static const Color black58= Color.fromRGBO(58, 58, 85, 0.8);
+
   static const Color white = Colors.white;
   static const Color white246 = Color.fromRGBO(246, 246, 246, 1);
 
