@@ -16,7 +16,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  
   int _selectedIndex = 0;
+
+  
 
   void _onSelectedTab(int index) {
     if (index == 2) {
@@ -60,6 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             child: Column(
+              spacing: 32.0,
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
@@ -69,10 +74,46 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text('dasd'),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Отменить',
+                          style: robotoTextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                            color: ColorsApp.black58,
+                          ),
+                        ),
+                      ),
                     ],
                   ),
-                )
+                ),
+                Text(
+                  'Запись',
+                  style: robotoTextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w400,
+                    color: ColorsApp.black58,
+                  ),
+                ),
+                SizedBox(
+                  height: 15.0,
+                ),
+                Divider(
+                  color: ColorsApp.black,
+                ),
+                SizedBox(
+                  height: 15.0,
+                ),
+                Text(
+                  'time',
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.pause,
+                  ),
+                ),
               ],
             ),
           ),
@@ -160,7 +201,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         colorFilter: ColorFilter.mode(
                           _selectedIndex == 0
                               ? ColorsApp.purple140
-                              : ColorsApp.black58,
+                              : ColorsApp.black58WithOpaciti08,
                           BlendMode.srcIn,
                         ),
                       ),
@@ -171,7 +212,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontWeight: FontWeight.w400,
                           color: _selectedIndex == 0
                               ? ColorsApp.purple140
-                              : ColorsApp.black58,
+                              : ColorsApp.black58WithOpaciti08,
                         ),
                       ),
                     ],
@@ -186,7 +227,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         colorFilter: ColorFilter.mode(
                           _selectedIndex == 1
                               ? ColorsApp.purple140
-                              : ColorsApp.black58,
+                              : ColorsApp.black58WithOpaciti08,
                           BlendMode.srcIn,
                         ),
                       ),
@@ -197,7 +238,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontWeight: FontWeight.w400,
                           color: _selectedIndex == 1
                               ? ColorsApp.purple140
-                              : ColorsApp.black58,
+                              : ColorsApp.black58WithOpaciti08,
                         ),
                       ),
                     ],
@@ -232,7 +273,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         colorFilter: ColorFilter.mode(
                           _selectedIndex == 3
                               ? ColorsApp.purple140
-                              : ColorsApp.black58,
+                              : ColorsApp.black58WithOpaciti08,
                           BlendMode.srcIn,
                         ),
                       ),
@@ -243,7 +284,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontWeight: FontWeight.w400,
                           color: _selectedIndex == 3
                               ? ColorsApp.purple140
-                              : ColorsApp.black58,
+                              : ColorsApp.black58WithOpaciti08,
                         ),
                       ),
                     ],
@@ -258,7 +299,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         colorFilter: ColorFilter.mode(
                           _selectedIndex == 4
                               ? ColorsApp.purple140
-                              : ColorsApp.black58,
+                              : ColorsApp.black58WithOpaciti08,
                           BlendMode.srcIn,
                         ),
                       ),
@@ -269,7 +310,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontWeight: FontWeight.w400,
                           color: _selectedIndex == 4
                               ? ColorsApp.purple140
-                              : ColorsApp.black58,
+                              : ColorsApp.black58WithOpaciti08,
                         ),
                       ),
                     ],
