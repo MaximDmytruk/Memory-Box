@@ -19,11 +19,66 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
   void _onSelectedTab(int index) {
+    if (index == 2) {
+      _showBottomSheet();
+      return;
+    }
     if (_selectedIndex == index) return;
     setState(() {
       _selectedIndex = index;
     });
-    print(_selectedIndex);
+  }
+
+  void _showBottomSheet() {
+    showModalBottomSheet(
+      context: context,
+      // isScrollControlled: true,
+      // useRootNavigator: true,
+      backgroundColor: ColorsApp.transparent,
+      barrierColor: ColorsApp.transparent,
+
+      builder: (context) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: Container(
+            padding: EdgeInsets.symmetric(
+              vertical: 32.0,
+            ),
+            decoration: BoxDecoration(
+              color: ColorsApp.white246,
+              borderRadius: BorderRadius.all(
+                Radius.circular(
+                  25.0,
+                ),
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: ColorsApp.black.withAlpha(50),
+                  blurRadius: 50,
+                  spreadRadius: 10,
+                ),
+              ],
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16.0,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text('dasd'),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+        );
+      },
+    );
   }
 
   Widget _getScreen(int index) {
@@ -36,10 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
         return Center(
           child: Text('Подборки'),
         );
-      case 2:
-        return Center(
-          child: Text('Запись'),
-        );
+
       case 3:
         return Center(
           child: Text('Аудиозаписи'),
@@ -67,22 +119,23 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         bottomNavigationBar: Container(
           decoration: BoxDecoration(
-              color: ColorsApp.transparent,
-              boxShadow: [
-                BoxShadow(
-                  color: ColorsApp.black.withAlpha(50),
-                  blurRadius: 50,
-                  spreadRadius: 10,
-                ),
-              ],
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(
-                  20.0,
-                ),
-                topRight: Radius.circular(
-                  20.0,
-                ),
-              )),
+            color: ColorsApp.transparent,
+            boxShadow: [
+              BoxShadow(
+                color: ColorsApp.black.withAlpha(50),
+                blurRadius: 50,
+                spreadRadius: 10,
+              ),
+            ],
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(
+                20.0,
+              ),
+              topRight: Radius.circular(
+                20.0,
+              ),
+            ),
+          ),
           child: ClipRRect(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(
