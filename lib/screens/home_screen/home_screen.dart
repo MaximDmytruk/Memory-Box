@@ -1,10 +1,18 @@
+
+
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_sound/public/flutter_sound_recorder.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:memory_box/constants/colors_app/colors_app.dart';
 import 'package:memory_box/constants/fonts/inter_font.dart';
 import 'package:memory_box/constants/icons_app/icons_app.dart';
 import 'package:memory_box/screens/main_screen/main_screen.dart';
 import 'package:memory_box/widgets/custom_background/custom_background.dart';
+import 'package:path/path.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,9 +26,67 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
-  void _onSelectedTab(int index) {
+  //Audio recorder
+  final FlutterSoundRecorder _recorder = FlutterSoundRecorder();
+  bool _isRecording = false;
+
+  @override
+  void initState() {
+    _initRecorder();
+    super.initState();
+  }
+
+  //For AudioRecord
+Future<void> _initRecorder() async {
+  final status = await Permission.microphone.request();
+  if (status != PermissionStatus.granted) {
+    throw 'Microphone permission not granted';
+  }
+  await _recorder.openRecorder();
+  _recorder.setSubscriptionDuration(const Duration(milliseconds: 500));
+}
+Future<void> _startRecording() async {
+  
+  String randomeName = Random().nextInt(6).toString();
+
+
+  final dir = await getExternalStorageDirectory();
+  final downloadPath = '/storage/emulated/0/Download';
+  final path = '$downloadPath/test_record$randomeName.aac';
+
+  await _recorder.startRecorder(toFile: path);
+  setState(() {
+    _isRecording = true;
+  });
+}
+
+  Future<void> _stopRecording() async {
+    await _recorder.stopRecorder();
+    setState(() {
+      _isRecording = false;
+    });
+  }
+
+  void playIconAction() {
+    print('Tapped play');
+    _startRecording();
+  }
+
+  void pauseIconAction() {
+    print('tapped pause');
+    _stopRecording();
+  }
+
+ 
+ @override
+void dispose() {
+  _recorder.closeRecorder();
+  super.dispose();
+}
+  //My Widgets
+  void _onSelectedTab(int index, BuildContext context) {
     if (index == 2) {
-      _showBottomSheet();
+      _showBottomSheet(context);
       return;
     }
     if (_selectedIndex == index) return;
@@ -29,94 +95,79 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  void _showBottomSheet() {
+  void _showBottomSheet(BuildContext context) {
     showModalBottomSheet(
-      context: context,
-      // isScrollControlled: true,
-      // useRootNavigator: true,
+      context: context, 
       backgroundColor: ColorsApp.transparent,
       barrierColor: ColorsApp.transparent,
-
-      builder: (context) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: Container(
-            padding: EdgeInsets.symmetric(
-              vertical: 32.0,
-            ),
-            decoration: BoxDecoration(
-              color: ColorsApp.white246,
-              borderRadius: BorderRadius.all(
-                Radius.circular(
-                  25.0,
-                ),
+      builder: (BuildContext bottomSheetContext) {
+        return Container(
+          padding: EdgeInsets.symmetric(vertical: 32.0),
+          decoration: BoxDecoration(
+            color: ColorsApp.white246,
+            borderRadius: BorderRadius.all(Radius.circular(25.0)),
+            boxShadow: [
+              BoxShadow(
+                color: ColorsApp.black.withAlpha(50),
+                blurRadius: 50,
+                spreadRadius: 10,
               ),
-              boxShadow: [
-                BoxShadow(
-                  color: ColorsApp.black.withAlpha(50),
-                  blurRadius: 50,
-                  spreadRadius: 10,
-                ),
-              ],
-            ),
-            child: Column(
-              spacing: 32.0,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          'Отменить',
-                          style: robotoTextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            color: ColorsApp.black58,
-                          ),
+            ],
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(bottomSheetContext),
+                      child: Text(
+                        'Отменить',
+                        style: robotoTextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                          color: ColorsApp.black58,
                         ),
                       ),
-                    ],
+                    ),
+                  ],
+                ),
+              ),
+              Text(
+                'Запись',
+                style: robotoTextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w400,
+                  color: ColorsApp.black58,
+                ),
+              ),
+              SizedBox(height: 15.0),
+              Divider(color: ColorsApp.black),
+              SizedBox(height: 15.0),
+              Text('time'),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    onPressed: playIconAction,
+                    icon: Icon(Icons.play_arrow),
                   ),
-                ),
-                Text(
-                  'Запись',
-                  style: robotoTextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w400,
-                    color: ColorsApp.black58,
+                  IconButton(
+                    onPressed: pauseIconAction,
+                    icon: Icon(Icons.pause),
                   ),
-                ),
-                SizedBox(
-                  height: 15.0,
-                ),
-                Divider(
-                  color: ColorsApp.black,
-                ),
-                SizedBox(
-                  height: 15.0,
-                ),
-                Text(
-                  'time',
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.pause,
-                  ),
-                ),
-              ],
-            ),
+                ],
+              ),
+            ],
           ),
         );
       },
     );
   }
+
 
   Widget _getScreen(int index) {
     switch (index) {
@@ -147,6 +198,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
+      name: 'Memory box',
+      
       child: Scaffold(
         backgroundColor: ColorsApp.transparent,
         body: Center(
@@ -184,7 +237,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             child: BottomNavigationBar(
               currentIndex: _selectedIndex,
-              onTap: _onSelectedTab,
+              onTap: (index){ _onSelectedTab(index, context);},
               backgroundColor: ColorsApp.white246,
               type: BottomNavigationBarType.fixed,
               elevation: 0,
