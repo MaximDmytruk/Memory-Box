@@ -1,5 +1,3 @@
-
-
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -37,28 +35,27 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   //For AudioRecord
-Future<void> _initRecorder() async {
-  final status = await Permission.microphone.request();
-  if (status != PermissionStatus.granted) {
-    throw 'Microphone permission not granted';
+  Future<void> _initRecorder() async {
+    final status = await Permission.microphone.request();
+    if (status != PermissionStatus.granted) {
+      throw 'Microphone permission not granted';
+    }
+    await _recorder.openRecorder();
+    _recorder.setSubscriptionDuration(const Duration(milliseconds: 500));
   }
-  await _recorder.openRecorder();
-  _recorder.setSubscriptionDuration(const Duration(milliseconds: 500));
-}
-Future<void> _startRecording() async {
-  
-  String randomeName = Random().nextInt(6).toString();
 
+  Future<void> _startRecording() async {
+    String randomeName = Random().nextInt(6).toString();
 
-  final dir = await getExternalStorageDirectory();
-  final downloadPath = '/storage/emulated/0/Download';
-  final path = '$downloadPath/test_record$randomeName.aac';
+    // final dir = await getExternalStorageDirectory();
+    final downloadPath = '/storage/emulated/0/Download';
+    final path = '$downloadPath/test_record$randomeName.aac';
 
-  await _recorder.startRecorder(toFile: path);
-  setState(() {
-    _isRecording = true;
-  });
-}
+    await _recorder.startRecorder(toFile: path);
+    setState(() {
+      _isRecording = true;
+    });
+  }
 
   Future<void> _stopRecording() async {
     await _recorder.stopRecorder();
@@ -77,12 +74,12 @@ Future<void> _startRecording() async {
     _stopRecording();
   }
 
- 
- @override
-void dispose() {
-  _recorder.closeRecorder();
-  super.dispose();
-}
+  @override
+  void dispose() {
+    _recorder.closeRecorder();
+    super.dispose();
+  }
+
   //My Widgets
   void _onSelectedTab(int index, BuildContext context) {
     if (index == 2) {
@@ -97,7 +94,7 @@ void dispose() {
 
   void _showBottomSheet(BuildContext context) {
     showModalBottomSheet(
-      context: context, 
+      context: context,
       backgroundColor: ColorsApp.transparent,
       barrierColor: ColorsApp.transparent,
       builder: (BuildContext bottomSheetContext) {
@@ -168,7 +165,6 @@ void dispose() {
     );
   }
 
-
   Widget _getScreen(int index) {
     switch (index) {
       case 0:
@@ -199,7 +195,6 @@ void dispose() {
   Widget build(BuildContext context) {
     return CustomBackground(
       name: 'Memory box',
-      
       child: Scaffold(
         backgroundColor: ColorsApp.transparent,
         body: Center(
@@ -237,7 +232,9 @@ void dispose() {
             ),
             child: BottomNavigationBar(
               currentIndex: _selectedIndex,
-              onTap: (index){ _onSelectedTab(index, context);},
+              onTap: (index) {
+                _onSelectedTab(index, context);
+              },
               backgroundColor: ColorsApp.white246,
               type: BottomNavigationBarType.fixed,
               elevation: 0,

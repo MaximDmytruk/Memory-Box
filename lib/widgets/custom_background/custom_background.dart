@@ -6,11 +6,13 @@ import 'package:memory_box/constants/painter/circle_painter.dart';
 class CustomBackground extends StatelessWidget {
   final Widget child;
   final String? name;
+  final String? secondName;
 
   const CustomBackground({
     super.key,
     required this.child,
     this.name,
+    this.secondName,
   });
 
   @override
@@ -26,6 +28,7 @@ class CustomBackground extends StatelessWidget {
             child: CustomPaint(
               painter: CirclePainter(
                 name: name,
+                secondName: secondName,
               ),
             ),
           ),

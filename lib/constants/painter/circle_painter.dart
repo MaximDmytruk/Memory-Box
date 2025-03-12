@@ -25,13 +25,13 @@ class CirclePainter extends CustomPainter {
 
     //Background
     Path path = Path();
-    path.moveTo(0, size.height * 0.8);
+    path.moveTo(0, size.height * 0.72);
 
     path.quadraticBezierTo(
-      size.width * 0.7,
-      size.height * 1.1,
+      size.width * 0.52,
+      size.height * 1.005,
       size.width,
-      size.height * 0.8,
+      size.height * 0.85,
     );
     path.lineTo(size.width, 0);
     path.lineTo(0, 0);
@@ -85,7 +85,7 @@ class CirclePainter extends CustomPainter {
       (size.width - textPainter.width) / 2 +
           textPainter.width -
           textPainter2.width,
-      (size.height - textPainter.height) / 2 + textPainter.height + 8,
+      (size.height - textPainter.height) / 2 + textPainter.height + 2,
     );
 
     // Малюємо другий текст

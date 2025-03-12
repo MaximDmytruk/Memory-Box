@@ -7,11 +7,14 @@ TextStyle robotoTextStyle({
   FontWeight fontWeight = FontWeight.w400,
   Color color = ColorsApp.black,
   double? letterSpacing,
+  
 }) {
   return GoogleFonts.roboto(
     fontSize: fontSize,
     fontWeight: fontWeight,
     color: color,
     letterSpacing: letterSpacing,
+    
+    
   );
 }

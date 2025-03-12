@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:memory_box/screens/home_screen/home_screen.dart';
+import 'package:memory_box/screens/new_user_meeting_screen/new_user_meeting_screen.dart';
 import 'package:memory_box/screens/splash_screen/widgets/splash_first.dart';
 import 'package:memory_box/screens/splash_screen/widgets/splash_two.dart';
 import 'package:memory_box/screens/splash_screen/widgets/splash_three.dart';
@@ -26,10 +27,13 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(
+        Duration(
+          seconds: 2,
+        ), () {
       if (mounted) {
         Navigator.of(context).pushReplacementNamed(
-          HomeScreen.routeName,
+          NewUserMeetingScreen.routeName,
         );
       }
     });
@@ -38,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    //  context.read<AuthBloc>().add(AuthEvent.registerUser(email: email, password: password, name: name));    - виклик блоку.!!
+    //TODO: //  context.read<AuthBloc>().add(AuthEvent.registerUser(email: email, password: password, name: name));    - виклик блоку.!!
 
     return Scaffold(
       body: listSplash[Random().nextInt(listSplash.length)],
