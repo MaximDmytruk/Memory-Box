@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:memory_box/screens/home_screen/home_screen.dart';
 import 'package:memory_box/screens/new_user_meeting_screen/new_user_meeting_screen.dart';
+import 'package:memory_box/screens/registration_screen/registration_screen.dart';
 import 'package:memory_box/screens/splash_screen/screen/splash_screen.dart';
 
 void main() {
@@ -18,6 +19,7 @@ class MainApp extends StatelessWidget {
         SplashScreen.routeName: (context) => SplashScreen(),
         HomeScreen.routeName: (context) => HomeScreen(),
         NewUserMeetingScreen.routeName: (context) => NewUserMeetingScreen(),
+        RegistrationScreen.routeName: (context) => RegistrationScreen(),
       },
       initialRoute: SplashScreen.routeName,
     );
