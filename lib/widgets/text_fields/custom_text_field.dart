@@ -48,7 +48,9 @@ class CustomTextField extends StatelessWidget {
         ),
         keyboardType:
             keyboardOnlyDigits ? TextInputType.phone : TextInputType.text,
-        inputFormatters: inputFormatters,
+        inputFormatters: [
+          ...?inputFormatters,
+        ],
         decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(
             horizontal: 50.0,
