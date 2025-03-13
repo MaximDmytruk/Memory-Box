@@ -23,6 +23,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   void _continueAction() {
     Navigator.of(context).pushNamed(RegistrationConfirmationScreen.routeName);
   }
+
   void _lateAction() {
     Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
   }

@@ -4,10 +4,14 @@ import 'package:memory_box/constants/fonts/inter_font.dart';
 
 class ContainerInfo extends StatelessWidget {
   final String text;
+  final double fontSize;
+  final FontWeight fontWeight;
 
   const ContainerInfo({
     super.key,
     required this.text,
+    this.fontSize = 14.0,
+    this.fontWeight = FontWeight.w400,
   });
 
   @override
@@ -37,8 +41,8 @@ class ContainerInfo extends StatelessWidget {
       child: Text(
         text,
         style: robotoTextStyle(
-          fontSize: 14.0,
-          fontWeight: FontWeight.w400,
+          fontSize: fontSize,
+          fontWeight: fontWeight,
           letterSpacing: 0.0,
         ),
         textAlign: TextAlign.center,

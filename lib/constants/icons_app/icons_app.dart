@@ -6,4 +6,5 @@ class IconsApp {
   static String profile = 'assets/icons/profile.svg';
    static String microfoneOrangeBackground = 'assets/icons/microfone_with_orange_background.svg';
    static String microfoneOrangeBackgroundAndText = 'assets/icons/microfone_with_orange_background_and_text.svg';
+   static String heart = 'assets/icons/heart.svg';
 }
