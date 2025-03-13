@@ -4,6 +4,7 @@ import 'package:memory_box/constants/fonts/inter_font.dart';
 
 class CustomTextField extends StatelessWidget {
   final String? prefixText;
+  
 
   const CustomTextField({
     super.key,
@@ -30,7 +31,7 @@ class CustomTextField extends StatelessWidget {
         ],
       ),
       child: TextField(
-        autofocus: true,
+       
         style: robotoTextStyle(
           fontSize: 20.0,
           fontWeight: FontWeight.w400,

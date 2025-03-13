@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:memory_box/constants/colors_app/colors_app.dart';
 import 'package:memory_box/constants/fonts/inter_font.dart';
+import 'package:memory_box/screens/home_screen/home_screen.dart';
 import 'package:memory_box/screens/registration_screen/widgets/custom_text_button.dart';
 import 'package:memory_box/widgets/buttons/custom_elevated_button.dart';
 import 'package:memory_box/widgets/containers/container_info.dart';
@@ -17,7 +18,9 @@ class RegistrationScreen extends StatefulWidget {
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
   void _continueAction() {}
-  void _lateAction() {}
+  void _lateAction() {
+    Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
+  }
 
   @override
   Widget build(BuildContext context) {
