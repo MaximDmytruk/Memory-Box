@@ -4,6 +4,7 @@ import 'package:memory_box/screens/new_user_meeting_screen/new_user_meeting_scre
 import 'package:memory_box/screens/registration_confirmation_screen/registration_confirmation_screen.dart';
 import 'package:memory_box/screens/registration_screen/registration_screen.dart';
 import 'package:memory_box/screens/splash_screen/screen/splash_screen.dart';
+import 'package:memory_box/screens/welcome_screen/welcome_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -23,6 +24,7 @@ class MainApp extends StatelessWidget {
         RegistrationScreen.routeName: (context) => RegistrationScreen(),
         RegistrationConfirmationScreen.routeName: (context) =>
             RegistrationConfirmationScreen(),
+        WelcomeScreen.routeName: (context) => WelcomeScreen(),
       },
       initialRoute: SplashScreen.routeName,
     );
