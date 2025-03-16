@@ -87,8 +87,7 @@ class CirclePainter extends CustomPainter {
           textPainter2.width,
       (size.height - textPainter.height) / 2 + textPainter.height + 2,
     );
-
-    // Малюємо другий текст
+    
     textPainter2.paint(canvas, offset2);
   }
 
