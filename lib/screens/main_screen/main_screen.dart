@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:memory_box/constants/colors_app/colors_app.dart';
 import 'package:memory_box/screens/home_screen/home_screen.dart';
-import 'package:memory_box/widgets/bottomSheets/show_record_bottom_sheet.dart';
+import 'package:memory_box/widgets/bottomSheets/record_custom_bottom_sheet.dart';
 import 'package:memory_box/widgets/custom_background/custom_background.dart';
 
 class MainScreen extends StatefulWidget {
