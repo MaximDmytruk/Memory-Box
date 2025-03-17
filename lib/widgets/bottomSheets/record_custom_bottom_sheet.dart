@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:memory_box/bloc/record_bloc.dart';
+import 'package:memory_box/blocs/record_bloc/record_bloc.dart';
 import 'package:memory_box/constants/colors_app/colors_app.dart';
 import 'package:memory_box/constants/fonts/inter_font.dart';
 
@@ -36,7 +36,7 @@ class _RecordCustomBottomSheetState extends State<RecordCustomBottomSheet> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
-        horizontal: 5.0,
+        horizontal: 11.0,
       ),
       child: Container(
         padding: EdgeInsets.symmetric(
@@ -50,6 +50,12 @@ class _RecordCustomBottomSheetState extends State<RecordCustomBottomSheet> {
             ),
             topRight: Radius.circular(
               25.0,
+            ),
+            bottomLeft: Radius.circular(
+              1.0,
+            ),
+            bottomRight: Radius.circular(
+              1.0,
             ),
           ),
           boxShadow: [

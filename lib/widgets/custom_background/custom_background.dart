@@ -7,12 +7,14 @@ class CustomBackground extends StatelessWidget {
   final Widget child;
   final String? name;
   final String? secondName;
+  final double heightPaint;
 
   const CustomBackground({
     super.key,
     required this.child,
     this.name,
     this.secondName,
+    this.heightPaint = 0.4,
   });
 
   @override
@@ -24,7 +26,7 @@ class CustomBackground extends StatelessWidget {
         children: [
           SizedBox(
             width: size.width,
-            height: size.height * 0.4,
+            height: size.height * heightPaint,
             child: CustomPaint(
               painter: CirclePainter(
                 name: name,

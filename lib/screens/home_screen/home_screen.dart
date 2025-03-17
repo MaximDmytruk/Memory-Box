@@ -7,7 +7,7 @@ import 'package:memory_box/screens/main_screen/main_screen.dart';
 import 'package:memory_box/widgets/bottomSheets/record_custom_bottom_sheet.dart';
 import 'package:memory_box/widgets/custom_background/custom_background.dart';
 import 'package:memory_box/widgets/custom_bottom_navigation_bar/custom_bottom_navigation_bar.dart';
-
+import 'package:memory_box/widgets/drawers/custom_drawer.dart';
 
 import 'package:permission_handler/permission_handler.dart';
 
@@ -22,6 +22,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
+  bool _isPanelVisible = false;
 
   //Audio recorder
   final FlutterSoundRecorder _recorder = FlutterSoundRecorder();
@@ -80,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
   // }
 
   //My Widgets
-  bool _isPanelVisible = false;
+  
 
   void turnOnOffVisibility() {
     if (_isPanelVisible == true) {
@@ -141,6 +142,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return CustomBackground(
       name: 'Memory box',
       child: Scaffold(
+        drawer: CustomDrawer(),
         backgroundColor: ColorsApp.transparent,
         body: Stack(
           children: [
@@ -155,9 +157,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   top: size.width * 0.5,
                 ),
                 child: RecordCustomBottomSheet(
-                  // playIconAction: playIconAction,
-                  // pauseIconAction: pauseIconAction,
-                ),
+                    // playIconAction: playIconAction,
+                    // pauseIconAction: pauseIconAction,
+                    ),
               ),
           ],
         ),

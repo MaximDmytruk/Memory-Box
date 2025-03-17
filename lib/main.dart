@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:memory_box/bloc/record_bloc.dart';
+import 'package:memory_box/blocs/record_bloc/record_bloc.dart';
 import 'package:memory_box/screens/home_screen/home_screen.dart';
 import 'package:memory_box/screens/new_user_meeting_screen/new_user_meeting_screen.dart';
 import 'package:memory_box/screens/registration_confirmation_screen/registration_confirmation_screen.dart';
