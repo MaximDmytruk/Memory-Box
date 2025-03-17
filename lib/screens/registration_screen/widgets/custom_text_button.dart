@@ -19,7 +19,7 @@ class CustomTextButton extends StatelessWidget {
       ),
       child: Text(
         'Пізніше',
-        style: robotoTextStyle(
+        style: customTextStyle(
           fontSize: 24.0,
           fontWeight: FontWeight.w500,
           letterSpacing: 2.0,

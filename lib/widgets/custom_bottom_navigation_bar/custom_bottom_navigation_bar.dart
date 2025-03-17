@@ -67,7 +67,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                       ),
                       Text(
                         'Главная',
-                        style: robotoTextStyle(
+                        style: customTextStyle(
                           fontSize: 10.0,
                           fontWeight: FontWeight.w400,
                           color: widget.selectedIndex == 0
@@ -93,7 +93,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                       ),
                       Text(
                         'Подборки',
-                        style: robotoTextStyle(
+                        style: customTextStyle(
                           fontSize: 10.0,
                           fontWeight: FontWeight.w400,
                           color: widget.selectedIndex == 1
@@ -115,7 +115,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                       ),
                       Text(
                         'Запись',
-                        style: robotoTextStyle(
+                        style: customTextStyle(
                           fontSize: 10.0,
                           fontWeight: FontWeight.w400,
                           color: ColorsApp.orange241,
@@ -139,7 +139,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                       ),
                       Text(
                         'Аудиозаписи',
-                        style: robotoTextStyle(
+                        style: customTextStyle(
                           fontSize: 10.0,
                           fontWeight: FontWeight.w400,
                           color: widget.selectedIndex == 3
@@ -165,7 +165,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                       ),
                       Text(
                         'Профиль',
-                        style: robotoTextStyle(
+                        style: customTextStyle(
                           fontSize: 10.0,
                           fontWeight: FontWeight.w400,
                           color: widget.selectedIndex == 4

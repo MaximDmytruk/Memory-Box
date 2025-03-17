@@ -14,4 +14,5 @@ class IconsApp {
   static String search = 'assets/icons/search.svg';
   static String wallet = 'assets/icons/wallet.svg';
   static String edit = 'assets/icons/edit.svg';
+  static String playPurple = 'assets/icons/play_purple.svg';
 }

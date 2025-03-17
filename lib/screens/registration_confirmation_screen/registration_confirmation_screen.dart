@@ -45,7 +45,7 @@ class _RegistrationConfirmationScreenState
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Text(
                   'Введи код із смс, щоб ми тебе запам\'ятали',
-                  style: robotoTextStyle(
+                  style: customTextStyle(
                     fontSize: 16.0,
                     fontWeight: FontWeight.w400,
                     color: ColorsApp.black58,

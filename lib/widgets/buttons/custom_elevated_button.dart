@@ -31,7 +31,7 @@ class CustomElevatedButton extends StatelessWidget {
           child: Center(
             child: Text(
               'Продовжити',
-              style: robotoTextStyle(
+              style: customTextStyle(
                 fontSize: 18.0,
                 fontWeight: FontWeight.w400,
                 color: ColorsApp.white246,

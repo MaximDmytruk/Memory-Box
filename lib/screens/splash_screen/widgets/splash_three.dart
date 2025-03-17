@@ -29,7 +29,7 @@ class SplashThree extends StatelessWidget {
         children: [
           Text(
             'MemoryBox',
-            style: robotoTextStyle(
+            style: customTextStyle(
               fontSize: 50.0,
               fontWeight: FontWeight.w700,
               color: ColorsApp.white246,

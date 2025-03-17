@@ -41,7 +41,7 @@ class CirclePainter extends CustomPainter {
     //Main Text
     TextSpan textSpan = TextSpan(
       text: name,
-      style: robotoTextStyle(
+      style: customTextStyle(
         color: ColorsApp.white,
         fontSize: 48.0,
         fontWeight: FontWeight.w700,
@@ -66,7 +66,7 @@ class CirclePainter extends CustomPainter {
     //Second Text
     TextSpan textSpan2 = TextSpan(
         text: secondName,
-        style: robotoTextStyle(
+        style: customTextStyle(
           color: ColorsApp.white,
           fontSize: 14.0,
           fontWeight: FontWeight.w400,

@@ -82,7 +82,7 @@ class _RecordCustomBottomSheetState extends State<RecordCustomBottomSheet> {
                         onPressed: () => Navigator.pop(context),
                         child: Text(
                           'Отменить',
-                          style: robotoTextStyle(
+                          style: customTextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w400,
                             color: ColorsApp.black58,
@@ -94,7 +94,7 @@ class _RecordCustomBottomSheetState extends State<RecordCustomBottomSheet> {
                 ),
                 Text(
                   'Запись',
-                  style: robotoTextStyle(
+                  style: customTextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w400,
                     color: ColorsApp.black58,

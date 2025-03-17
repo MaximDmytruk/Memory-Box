@@ -40,7 +40,7 @@ class ContainerInfo extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: robotoTextStyle(
+        style: customTextStyle(
           fontSize: fontSize,
           fontWeight: fontWeight,
           letterSpacing: 0.0,

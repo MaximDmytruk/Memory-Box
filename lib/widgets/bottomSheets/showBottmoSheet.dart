@@ -33,7 +33,7 @@ void _showBottomSheet(BuildContext context) {
                     onPressed: () => Navigator.pop(bottomSheetContext),
                     child: Text(
                       'Отменить',
-                      style: robotoTextStyle(
+                      style: customTextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
                         color: ColorsApp.black58,
@@ -45,7 +45,7 @@ void _showBottomSheet(BuildContext context) {
             ),
             Text(
               'Запись',
-              style: robotoTextStyle(
+              style: customTextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w400,
                 color: ColorsApp.black58,

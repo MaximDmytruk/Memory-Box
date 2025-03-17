@@ -40,7 +40,7 @@ class CustomTextField extends StatelessWidget {
       ),
       child: TextField(
         textAlign: textAlign,
-        style: robotoTextStyle(
+        style: customTextStyle(
           fontSize: 20.0,
           fontWeight: FontWeight.w400,
           color: ColorsApp.black58,

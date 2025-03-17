@@ -41,7 +41,7 @@ class _NewUserMeetingScreenState extends State<NewUserMeetingScreen> {
             ),
             Text(
               'Привіт!',
-              style: robotoTextStyle(
+              style: customTextStyle(
                 fontSize: 24.0,
                 fontWeight: FontWeight.w400,
                 color: ColorsApp.black58,
@@ -49,7 +49,7 @@ class _NewUserMeetingScreenState extends State<NewUserMeetingScreen> {
             ),
             Text(
               'Ми раді бачити тебе тут. Ця програма допоможе записувати казки та тримати їх у зручному місці не заповнюючи пам\'ять на телефоні',
-              style: robotoTextStyle(
+              style: customTextStyle(
                 fontSize: 16.0,
                 fontWeight: FontWeight.w400,
                 color: ColorsApp.black58,

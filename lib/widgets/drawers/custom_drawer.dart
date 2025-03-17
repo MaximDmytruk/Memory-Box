@@ -27,7 +27,7 @@ class CustomDrawer extends StatelessWidget {
             Center(
               child: Text(
                 'Аудіоказки',
-                style: robotoTextStyle(
+                style: customTextStyle(
                   fontSize: 24.0,
                   fontWeight: FontWeight.w500,
                   letterSpacing: 2,
@@ -41,7 +41,7 @@ class CustomDrawer extends StatelessWidget {
             Center(
               child: Text(
                 'Меню',
-                style: robotoTextStyle(
+                style: customTextStyle(
                   fontSize: 22.0,
                   fontWeight: FontWeight.w400,
                   letterSpacing: 0,
@@ -56,7 +56,7 @@ class CustomDrawer extends StatelessWidget {
               onPressed: () {},
               label: Text(
                 'Головна',
-                style: robotoTextStyle(
+                style: customTextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.w400,
                 ),
@@ -71,7 +71,7 @@ class CustomDrawer extends StatelessWidget {
               onPressed: () {},
               label: Text(
                 'Профіль',
-                style: robotoTextStyle(
+                style: customTextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.w400,
                 ),
@@ -86,7 +86,7 @@ class CustomDrawer extends StatelessWidget {
               onPressed: () {},
               label: Text(
                 'Підбірки',
-                style: robotoTextStyle(
+                style: customTextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.w400,
                 ),
@@ -101,7 +101,7 @@ class CustomDrawer extends StatelessWidget {
               onPressed: () {},
               label: Text(
                 'Усі аудіозаписи',
-                style: robotoTextStyle(
+                style: customTextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.w400,
                 ),
@@ -116,7 +116,7 @@ class CustomDrawer extends StatelessWidget {
               onPressed: () {},
               label: Text(
                 'Пошук',
-                style: robotoTextStyle(
+                style: customTextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.w400,
                 ),
@@ -131,7 +131,7 @@ class CustomDrawer extends StatelessWidget {
               onPressed: () {},
               label: Text(
                 'Недавно видалені',
-                style: robotoTextStyle(
+                style: customTextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.w400,
                 ),
@@ -149,7 +149,7 @@ class CustomDrawer extends StatelessWidget {
               onPressed: () {},
               label: Text(
                 'Підписка',
-                style: robotoTextStyle(
+                style: customTextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.w400,
                 ),
@@ -167,7 +167,7 @@ class CustomDrawer extends StatelessWidget {
               onPressed: () {},
               label: Text(
                 'Написати в підтримку',
-                style: robotoTextStyle(
+                style: customTextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.w400,
                 ),

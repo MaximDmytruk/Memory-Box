@@ -4,6 +4,7 @@ import 'package:memory_box/constants/colors_app/colors_app.dart';
 import 'package:memory_box/constants/fonts/inter_font.dart';
 import 'package:memory_box/constants/icons_app/icons_app.dart';
 import 'package:memory_box/screens/home_screen/home_screen.dart';
+import 'package:memory_box/screens/main_screen/widgets/custom_audio_list_view.dart';
 import 'package:memory_box/widgets/bottomSheets/record_custom_bottom_sheet.dart';
 import 'package:memory_box/widgets/custom_background/custom_background.dart';
 
@@ -27,7 +28,7 @@ class _MainScreenState extends State<MainScreen> {
         backgroundColor: ColorsApp.transparent,
         body: Padding(
           padding: const EdgeInsets.only(
-            top: 33.0,
+            top: 40.0,
           ),
           child: Column(
             spacing: 24.0,
@@ -45,9 +46,7 @@ class _MainScreenState extends State<MainScreen> {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 4.0,
-              ),
+             
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Row(
@@ -56,7 +55,7 @@ class _MainScreenState extends State<MainScreen> {
                   children: [
                     Text(
                       'Підбірки',
-                      style: robotoTextStyle(
+                      style: customTextStyle(
                         fontSize: 24.0,
                         fontWeight: FontWeight.w500,
                         color: ColorsApp.white246,
@@ -68,7 +67,7 @@ class _MainScreenState extends State<MainScreen> {
                       onTap: () {},
                       child: Text(
                         ' Відкрити усі ',
-                        style: robotoTextStyle(
+                        style: customTextStyle(
                           fontSize: 14.0,
                           fontWeight: FontWeight.w500,
                           color: ColorsApp.white246,
@@ -101,73 +100,8 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 20.0),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 11.0,vertical: 10,),
-                    decoration: BoxDecoration(
-                      color: ColorsApp.white246,
-                      boxShadow: [
-                        BoxShadow(
-                          color: ColorsApp.black.withAlpha(50),
-                          blurRadius: 50,
-                          spreadRadius: 10,
-                        ),
-                      ],
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(
-                          20.0,
-                        ),
-                        topRight: Radius.circular(
-                          20.0,
-                        ),
-                      ),
-                    ),
-                    child: ListView.builder(
-                        itemCount: 100,
-                        itemBuilder: (
-                          BuildContext context,
-                          int index,
-                        ) {
-                          if (index == 0) {
-                            return Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Text(
-                                  'Аудіозаписи',
-                                  style: robotoTextStyle(
-                                    fontSize: 24.0,
-                                    fontWeight: FontWeight.w500,
-                                    color: ColorsApp.black58,
-                                    letterSpacing: 4,
-                                  ),
-                                ),
-                                InkWell(
-                                  borderRadius: BorderRadius.circular(25.0),
-                                  onTap: () {},
-                                  child: Text(
-                                    ' Відкрити усі ',
-                                    style: robotoTextStyle(
-                                      fontSize: 14.0,
-                                      fontWeight: FontWeight.w500,
-                                      color: ColorsApp.black58,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            );
-                          } else {
-                            return Row(
-                              children: [Text('sadasd')],
-                            );
-                          }
-                        }),
-                  ),
-                ),
-              ),
+              SizedBox(height: 15.0),
+              CustomAudioListView(),
             ],
           ),
         ),

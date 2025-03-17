@@ -48,7 +48,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               ),
               Text(
                 'Введіть номер телефона',
-                style: robotoTextStyle(
+                style: customTextStyle(
                   fontSize: 16.0,
                   fontWeight: FontWeight.w400,
                   color: ColorsApp.black58,
