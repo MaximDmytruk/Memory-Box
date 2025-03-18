@@ -46,7 +46,6 @@ class _MainScreenState extends State<MainScreen> {
                   ],
                 ),
               ),
-             
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Row(
@@ -85,7 +84,54 @@ class _MainScreenState extends State<MainScreen> {
                     spacing: 16.0,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Expanded(child: Container(color: Colors.greenAccent)),
+                      Expanded(
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 40.0),
+                          decoration: BoxDecoration(
+                            color: ColorsApp.greenWithOpaciti075,
+                            borderRadius: BorderRadius.circular(
+                              30.0,
+                            ),
+                          ),
+                          child: Column(
+                            spacing: 47.0,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Тут буде твій набір казок',
+                                style: customTextStyle(
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.w500,
+                                  color: ColorsApp.white246,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                              InkWell(
+                                borderRadius: BorderRadius.circular(25.0),
+                                onTap: () {},
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    border: Border(
+                                      bottom: BorderSide(
+                                        width: 1,
+                                        color: ColorsApp.white,
+                                      ),
+                                    ),
+                                  ),
+                                  child: Text(
+                                    'Добавити',
+                                    style: customTextStyle(
+                                      fontSize: 14.0,
+                                      fontWeight: FontWeight.w500,
+                                      color: ColorsApp.white246,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                       Expanded(
                         child: Column(
                           spacing: 16.0,

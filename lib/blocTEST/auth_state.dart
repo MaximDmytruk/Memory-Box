@@ -16,3 +16,4 @@ class AuthState with _$AuthState {
    
   }) = _AuthState;
 }
+

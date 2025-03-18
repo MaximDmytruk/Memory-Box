@@ -19,4 +19,7 @@ class ColorsApp {
   static const Color blue103 = Color.fromRGBO(103, 139, 210, 1);
 
   static const Color orange241 = Color.fromRGBO(241, 180, 136, 1);
+
+  static const Color greenWithOpaciti075 = Color.fromRGBO(113 , 165, 159, 0.75);
+
 }
