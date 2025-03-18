@@ -14,8 +14,6 @@ class NewUserMeetingScreen extends StatefulWidget {
   State<NewUserMeetingScreen> createState() => _NewUserMeetingScreenState();
 }
 
-//TODO: глянути чи правильна побудова віджетів ?
-
 class _NewUserMeetingScreenState extends State<NewUserMeetingScreen> {
   void continueAction() => Navigator.of(context).pushNamed(
         RegistrationScreen.routeName,

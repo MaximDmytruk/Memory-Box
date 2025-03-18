@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:memory_box/constants/colors_app/colors_app.dart';
 import 'package:memory_box/constants/fonts/inter_font.dart';
 
-void _showBottomSheet(BuildContext context) {
+void showBottomSheet(BuildContext context) {
   showModalBottomSheet(
     context: context,
     backgroundColor: ColorsApp.transparent,

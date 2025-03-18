@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:memory_box/constants/colors_app/colors_app.dart';
 import 'package:memory_box/constants/fonts/inter_font.dart';
-import 'package:memory_box/constants/icons_app/icons_app.dart';
 import 'package:memory_box/screens/main_screen/widgets/audio_item.dart';
 
 class CustomAudioListView extends StatelessWidget {

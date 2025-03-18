@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:memory_box/screens/home_screen/home_screen.dart';
 import 'package:memory_box/screens/new_user_meeting_screen/new_user_meeting_screen.dart';
 import 'package:memory_box/screens/splash_screen/widgets/splash_first.dart';
 import 'package:memory_box/screens/splash_screen/widgets/splash_two.dart';

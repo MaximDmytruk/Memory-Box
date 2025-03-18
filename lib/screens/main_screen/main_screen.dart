@@ -3,9 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:memory_box/constants/colors_app/colors_app.dart';
 import 'package:memory_box/constants/fonts/inter_font.dart';
 import 'package:memory_box/constants/icons_app/icons_app.dart';
-import 'package:memory_box/screens/home_screen/home_screen.dart';
 import 'package:memory_box/screens/main_screen/widgets/custom_audio_list_view.dart';
-import 'package:memory_box/widgets/bottomSheets/record_custom_bottom_sheet.dart';
 import 'package:memory_box/widgets/custom_background/custom_background.dart';
 
 class MainScreen extends StatefulWidget {

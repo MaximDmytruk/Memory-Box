@@ -1,15 +1,10 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_sound/public/flutter_sound_recorder.dart';
 import 'package:memory_box/constants/colors_app/colors_app.dart';
 import 'package:memory_box/screens/main_screen/main_screen.dart';
 import 'package:memory_box/widgets/bottomSheets/record_custom_bottom_sheet.dart';
 import 'package:memory_box/widgets/custom_background/custom_background.dart';
 import 'package:memory_box/widgets/custom_bottom_navigation_bar/custom_bottom_navigation_bar.dart';
 import 'package:memory_box/widgets/drawers/custom_drawer.dart';
-
-import 'package:permission_handler/permission_handler.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -25,8 +20,8 @@ class _HomeScreenState extends State<HomeScreen> {
   bool _isPanelVisible = false;
 
   //Audio recorder
-  final FlutterSoundRecorder _recorder = FlutterSoundRecorder();
-  bool _isRecording = false;
+  // final FlutterSoundRecorder _recorder = FlutterSoundRecorder();
+  // bool _isRecording = false;
 
   @override
   void initState() {
