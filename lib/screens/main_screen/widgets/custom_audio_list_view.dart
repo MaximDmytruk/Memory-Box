@@ -56,7 +56,7 @@ class CustomAudioListView extends StatelessWidget {
                       fontSize: 24.0,
                       fontWeight: FontWeight.w500,
                       color: ColorsApp.black58,
-                      letterSpacing: 4,
+                      letterSpacing: 1,
                     ),
                   ),
                   InkWell(

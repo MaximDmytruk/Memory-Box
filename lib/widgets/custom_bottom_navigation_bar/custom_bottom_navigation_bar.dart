@@ -45,6 +45,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               ),
             ),
             child: BottomNavigationBar(
+              
               currentIndex: widget.selectedIndex,
               onTap: (index) {
                 widget.onSelectedTab (index, context);
