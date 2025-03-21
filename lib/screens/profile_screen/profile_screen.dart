@@ -75,30 +75,29 @@ class _ProfileScreenState extends State<ProfileScreen> {
               SizedBox(
                 height: 24.0,
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 93.0,
+              Container(
+                padding: EdgeInsets.all(
+                  70,
                 ),
-                child: Container(
-                  padding: EdgeInsets.all(
-                    70,
+                height: 228.0,
+                width: 228.0,
+                decoration: BoxDecoration(
+                  color: ColorsApp.black58WithOpaciti08,
+                  borderRadius: BorderRadius.circular(
+                    24.0,
                   ),
-                  height: 228.0,
-                  width: 228.0,
-                  decoration: BoxDecoration(
-                    color: ColorsApp.black58WithOpaciti08,
-                    borderRadius: BorderRadius.circular(
-                      24.0,
+                ),
+                child: InkWell(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(
+                      40,
                     ),
                   ),
-                  child: InkWell(
-                    borderRadius: BorderRadius.all(Radius.circular(24)),
-                    onTap: _photoAction,
-                    child: SvgPicture.asset(
-                      IconsApp.photo,
-                      width: 80.0,
-                      height: 80.0,
-                    ),
+                  onTap: _photoAction,
+                  child: SvgPicture.asset(
+                    IconsApp.photo,
+                    width: 80.0,
+                    height: 80.0,
                   ),
                 ),
               ),
