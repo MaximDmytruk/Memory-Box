@@ -3,7 +3,7 @@ import 'package:memory_box/constants/colors_app/colors_app.dart';
 import 'package:memory_box/constants/fonts/inter_font.dart';
 import 'package:memory_box/screens/registration_screen/registration_screen.dart';
 import 'package:memory_box/widgets/buttons/custom_elevated_button.dart';
-import 'package:memory_box/widgets/custom_background/custom_background.dart';
+import 'package:memory_box/widgets/backgrounds/custom_background/custom_background.dart';
 
 class NewUserMeetingScreen extends StatefulWidget {
   static String routeName = '/new_user_meeting_screen';
@@ -13,7 +13,7 @@ class NewUserMeetingScreen extends StatefulWidget {
   @override
   State<NewUserMeetingScreen> createState() => _NewUserMeetingScreenState();
 }
-
+// успішно реастрція екран 
 class _NewUserMeetingScreenState extends State<NewUserMeetingScreen> {
   void continueAction() => Navigator.of(context).pushNamed(
         RegistrationScreen.routeName,

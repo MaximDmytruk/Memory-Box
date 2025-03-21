@@ -5,7 +5,7 @@ import 'package:memory_box/constants/fonts/inter_font.dart';
 import 'package:memory_box/screens/welcome_screen/welcome_screen.dart';
 import 'package:memory_box/widgets/buttons/custom_elevated_button.dart';
 import 'package:memory_box/widgets/containers/container_info.dart';
-import 'package:memory_box/widgets/custom_background/custom_background.dart';
+import 'package:memory_box/widgets/backgrounds/custom_background/custom_background.dart';
 import 'package:memory_box/widgets/text_fields/custom_text_field.dart';
 
 class RegistrationConfirmationScreen extends StatefulWidget {

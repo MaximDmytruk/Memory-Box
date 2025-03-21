@@ -4,7 +4,9 @@ import 'package:memory_box/constants/colors_app/colors_app.dart';
 import 'package:memory_box/constants/fonts/inter_font.dart';
 import 'package:memory_box/constants/icons_app/icons_app.dart';
 import 'package:memory_box/screens/main_screen/widgets/custom_audio_list_view.dart';
-import 'package:memory_box/widgets/custom_background/custom_background.dart';
+import 'package:memory_box/screens/registration_screen/widgets/custom_text_button.dart';
+import 'package:memory_box/widgets/backgrounds/custom_background/custom_background.dart';
+import 'package:memory_box/widgets/buttons/custom_text_with_underline_button.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -14,7 +16,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  void iconButtonAction() {
+  void _iconMenuButtonAction() {
     Scaffold.of(context).openDrawer();
   }
 
@@ -26,17 +28,19 @@ class _MainScreenState extends State<MainScreen> {
         backgroundColor: ColorsApp.transparent,
         body: Padding(
           padding: const EdgeInsets.only(
-            top: 40.0,
+            top: 67.0,
           ),
           child: Column(
             spacing: 24.0,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16.0,
+                ),
                 child: Row(
                   children: [
                     IconButton(
-                      onPressed: iconButtonAction,
+                      onPressed: _iconMenuButtonAction,
                       icon: SvgPicture.asset(
                         IconsApp.menu,
                       ),
@@ -59,17 +63,9 @@ class _MainScreenState extends State<MainScreen> {
                         letterSpacing: 4,
                       ),
                     ),
-                    InkWell(
-                      borderRadius: BorderRadius.circular(25.0),
-                      onTap: () {},
-                      child: Text(
-                        ' Відкрити усі ',
-                        style: customTextStyle(
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w500,
-                          color: ColorsApp.white246,
-                        ),
-                      ),
+                    CustomTextButton(
+                      name: 'Відкрити усі',
+                      color: ColorsApp.white246,
                     ),
                   ],
                 ),
@@ -104,27 +100,8 @@ class _MainScreenState extends State<MainScreen> {
                                 ),
                                 textAlign: TextAlign.center,
                               ),
-                              InkWell(
-                                borderRadius: BorderRadius.circular(25.0),
-                                onTap: () {},
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    border: Border(
-                                      bottom: BorderSide(
-                                        width: 1,
-                                        color: ColorsApp.white,
-                                      ),
-                                    ),
-                                  ),
-                                  child: Text(
-                                    'Добавити',
-                                    style: customTextStyle(
-                                      fontSize: 14.0,
-                                      fontWeight: FontWeight.w500,
-                                      color: ColorsApp.white246,
-                                    ),
-                                  ),
-                                ),
+                              CustomTextWithUnderlineButton(
+                                name: 'Добавити',
                               ),
                             ],
                           ),

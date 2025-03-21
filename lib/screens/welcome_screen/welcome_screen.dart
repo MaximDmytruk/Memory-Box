@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:memory_box/constants/icons_app/icons_app.dart';
 import 'package:memory_box/widgets/containers/container_info.dart';
-import 'package:memory_box/widgets/custom_background/custom_background.dart';
+import 'package:memory_box/widgets/backgrounds/custom_background/custom_background.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static String routeName = '/welcom_screen';

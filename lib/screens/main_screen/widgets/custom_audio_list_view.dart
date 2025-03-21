@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:memory_box/constants/colors_app/colors_app.dart';
 import 'package:memory_box/constants/fonts/inter_font.dart';
 import 'package:memory_box/screens/main_screen/widgets/audio_item.dart';
+import 'package:memory_box/screens/registration_screen/widgets/custom_text_button.dart';
 
 class CustomAudioListView extends StatelessWidget {
   const CustomAudioListView({
@@ -59,17 +60,9 @@ class CustomAudioListView extends StatelessWidget {
                       letterSpacing: 1,
                     ),
                   ),
-                  InkWell(
-                    borderRadius: BorderRadius.circular(25.0),
+                  CustomTextButton(
+                    name: 'Відкрити усі',
                     onTap: openAllAction,
-                    child: Text(
-                      ' Відкрити усі ',
-                      style: customTextStyle(
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w500,
-                        color: ColorsApp.black58,
-                      ),
-                    ),
                   ),
                 ],
               ),
@@ -88,7 +81,10 @@ class CustomAudioListView extends StatelessWidget {
                     BuildContext context,
                     int index,
                   ) {
-                    return AudioItem(name: 'Name', time: 'time',);
+                    return AudioItem(
+                      name: 'Name',
+                      time: 'time',
+                    );
                   },
                 ),
               ),
@@ -99,4 +95,3 @@ class CustomAudioListView extends StatelessWidget {
     );
   }
 }
-

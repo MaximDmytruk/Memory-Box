@@ -18,7 +18,7 @@ class RecordBloc extends Bloc<RecordEvent, RecordState> {
     on<_PlayAudio>(_playAudio);
   }
 
-  //Start Recording
+
   void _startRecording(
     _StartRecording event,
     Emitter<RecordState> emit,

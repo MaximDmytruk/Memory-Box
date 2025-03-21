@@ -7,7 +7,7 @@ import 'package:memory_box/screens/registration_confirmation_screen/registration
 import 'package:memory_box/screens/registration_screen/widgets/custom_text_button.dart';
 import 'package:memory_box/widgets/buttons/custom_elevated_button.dart';
 import 'package:memory_box/widgets/containers/container_info.dart';
-import 'package:memory_box/widgets/custom_background/custom_background.dart';
+import 'package:memory_box/widgets/backgrounds/custom_background/custom_background.dart';
 import 'package:memory_box/widgets/text_fields/custom_text_field.dart';
 
 class RegistrationScreen extends StatefulWidget {
@@ -70,7 +70,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 onTap: _continueAction,
               ),
               CustomTextButton(
+                name: "Пізніше",
                 onTap: _lateAction,
+                letterSpacing: 2,
+                fontSize: 24.0,
+                fontWeight: FontWeight.w500,
               ),
               ContainerInfo(
                 text:

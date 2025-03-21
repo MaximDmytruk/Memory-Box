@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:memory_box/constants/colors_app/colors_app.dart';
 import 'package:memory_box/screens/main_screen/main_screen.dart';
+import 'package:memory_box/screens/profile_screen/profile_screen.dart';
 import 'package:memory_box/widgets/bottomSheets/record_custom_bottom_sheet.dart';
-import 'package:memory_box/widgets/custom_background/custom_background.dart';
-import 'package:memory_box/widgets/custom_bottom_navigation_bar/custom_bottom_navigation_bar.dart';
+import 'package:memory_box/widgets/bottomSheets/showBottmoSheet.dart';
+import 'package:memory_box/widgets/backgrounds/custom_background/custom_background.dart';
+import 'package:memory_box/widgets/navigations_bars/custom_bottom_navigation_bar/custom_bottom_navigation_bar.dart';
 import 'package:memory_box/widgets/drawers/custom_drawer.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -76,7 +78,6 @@ class _HomeScreenState extends State<HomeScreen> {
   // }
 
   //My Widgets
-  
 
   void turnOnOffVisibility() {
     if (_isPanelVisible == true) {
@@ -92,13 +93,21 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void onSelectedTab(int index, BuildContext context) {
     if (index == 2) {
-      turnOnOffVisibility();
+      // turnOnOffVisibility();
+      showRecordBottomSheet(context);
 
-      // showRecordBottomSheet(
+// showRecordBottomSheet(
+//         context: context,
+//         playIconAction: playIconAction,
+//         pauseIconAction: pauseIconAction,
+//       );
+      // showBottomSheet(
       //   context: context,
-      //   playIconAction: playIconAction,
-      //   pauseIconAction: pauseIconAction,
+      //   builder: (BuildContext context) {
+      //     return Container();
+      //   },
       // );
+
       return;
     }
     if (_selectedIndex == index) return;
@@ -121,9 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Text('Аудиозаписи'),
         );
       case 4:
-        return Center(
-          child: Text('Профиль'),
-        );
+        return ProfileScreen();
       default:
         return Center(
           child: Text('Default'),
@@ -137,6 +144,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return CustomBackground(
       name: 'Memory box',
       child: Scaffold(
+       
         drawer: CustomDrawer(),
         backgroundColor: ColorsApp.transparent,
         body: Stack(
