@@ -77,20 +77,14 @@ class _PlayAllRepeatButtonState extends State<PlayAllRepeatButton> {
               child: SvgPicture.asset(
                 IconsApp.repeat,
                 colorFilter: ColorFilter.mode(
-                  repeat == false ? ColorsApp.white : ColorsApp.white,
+                  repeat == false
+                      ? ColorsApp.white246withOpaciti05
+                      : ColorsApp.white246,
                   BlendMode.srcIn,
                 ),
               ),
             ),
           ),
-          // Expanded(
-          //   flex: 25,
-          //   child: InkWell(
-          //     onTap: _repeatAction,
-          //     child: Icon(Icons.repeat,
-          //         color: repeat == false ? ColorsApp.white : ColorsApp.white),
-          //   ),
-          // ),
         ],
       ),
     );
