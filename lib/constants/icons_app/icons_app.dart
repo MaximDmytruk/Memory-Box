@@ -16,4 +16,6 @@ class IconsApp {
   static String edit = 'assets/icons/edit.svg';
   static String playPurple = 'assets/icons/play_purple.svg';
   static String photo = 'assets/icons/photo.svg';
+  static String dots = 'assets/icons/dots.svg';
+  static String repeat = 'assets/icons/repeat.svg';
 }

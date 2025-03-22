@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memory_box/constants/colors_app/colors_app.dart';
+import 'package:memory_box/screens/audio_recordings_screen/audio_recordings_screen.dart';
 import 'package:memory_box/screens/main_screen/main_screen.dart';
 import 'package:memory_box/screens/profile_screen/profile_screen.dart';
 import 'package:memory_box/widgets/bottomSheets/record_custom_bottom_sheet.dart';
@@ -96,11 +97,11 @@ class _HomeScreenState extends State<HomeScreen> {
       // turnOnOffVisibility();
       showRecordBottomSheet(context);
 
-// showRecordBottomSheet(
-//         context: context,
-//         playIconAction: playIconAction,
-//         pauseIconAction: pauseIconAction,
-//       );
+      // showRecordBottomSheet(
+      //         context: context,
+      //         playIconAction: playIconAction,
+      //         pauseIconAction: pauseIconAction,
+      //       );
       // showBottomSheet(
       //   context: context,
       //   builder: (BuildContext context) {
@@ -126,9 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
         );
 
       case 3:
-        return Center(
-          child: Text('Аудиозаписи'),
-        );
+        return AudioRecordingsScreen();
       case 4:
         return ProfileScreen();
       default:
@@ -144,7 +143,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return CustomBackground(
       name: 'Memory box',
       child: Scaffold(
-       
         drawer: CustomDrawer(),
         backgroundColor: ColorsApp.transparent,
         body: Stack(
@@ -159,10 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: EdgeInsets.only(
                   top: size.width * 0.5,
                 ),
-                child: RecordCustomBottomSheet(
-                    // playIconAction: playIconAction,
-                    // pauseIconAction: pauseIconAction,
-                    ),
+                child: RecordCustomBottomSheet(),
               ),
           ],
         ),

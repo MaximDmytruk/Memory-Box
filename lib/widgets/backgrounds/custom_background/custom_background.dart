@@ -7,6 +7,7 @@ class CustomBackground extends StatelessWidget {
   final Widget child;
   final String? name;
   final String? secondName;
+  final Color backgroundColor;
   final double heightPaint;
 
   const CustomBackground({
@@ -15,6 +16,7 @@ class CustomBackground extends StatelessWidget {
     this.name,
     this.secondName,
     this.heightPaint = 0.4,
+    this.backgroundColor = ColorsApp.purple128,
   });
 
   @override
@@ -32,6 +34,7 @@ class CustomBackground extends StatelessWidget {
               painter: CirclePainter(
                 name: name,
                 secondName: secondName,
+                backgroundColor: backgroundColor,
               ),
             ),
           ),

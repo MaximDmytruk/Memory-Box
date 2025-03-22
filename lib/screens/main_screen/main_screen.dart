@@ -4,7 +4,7 @@ import 'package:memory_box/constants/colors_app/colors_app.dart';
 import 'package:memory_box/constants/fonts/inter_font.dart';
 import 'package:memory_box/constants/icons_app/icons_app.dart';
 import 'package:memory_box/screens/main_screen/widgets/custom_audio_list_view.dart';
-import 'package:memory_box/screens/registration_screen/widgets/custom_text_button.dart';
+import 'package:memory_box/screens/registration_screens/registration_screen/widgets/custom_text_button.dart';
 import 'package:memory_box/widgets/backgrounds/custom_background/custom_background.dart';
 import 'package:memory_box/widgets/buttons/custom_text_with_underline_button.dart';
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:memory_box/constants/colors_app/colors_app.dart';
 import 'package:memory_box/constants/fonts/inter_font.dart';
 import 'package:memory_box/screens/main_screen/widgets/audio_item.dart';
-import 'package:memory_box/screens/registration_screen/widgets/custom_text_button.dart';
+import 'package:memory_box/screens/registration_screens/registration_screen/widgets/custom_text_button.dart';
 
 class CustomAudioListView extends StatelessWidget {
   const CustomAudioListView({

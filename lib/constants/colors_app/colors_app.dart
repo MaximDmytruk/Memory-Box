@@ -12,11 +12,14 @@ class ColorsApp {
 
   static const Color white = Colors.white;
   static const Color white246 = Color.fromRGBO(246, 246, 246, 1);
+  static const Color white246withOpaciti02 = Color.fromRGBO(246, 246, 246, 0.2);
+  static const Color white246withOpaciti05 = Color.fromRGBO(246, 246, 246, 0.5);
 
   static const Color purple128 = Color.fromRGBO(128, 119, 228, 1);
   static const Color purple140 = Color.fromRGBO(140, 132, 226, 1);
 
   static const Color blue103 = Color.fromRGBO(103, 139, 210, 1);
+  static const Color blue94 = Color.fromRGBO(94, 119, 206, 1);
 
   static const Color red = Color.fromRGBO(226, 119, 119, 1);
 

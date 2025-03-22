@@ -6,11 +6,13 @@ import 'package:memory_box/constants/fonts/inter_font.dart';
 class CirclePainter extends CustomPainter {
   final String? name;
   final String? secondName;
+  final Color backgroundColor;
 
   CirclePainter({
     super.repaint,
     this.name,
     this.secondName,
+    required this.backgroundColor,
   });
 
   @override
@@ -20,7 +22,7 @@ class CirclePainter extends CustomPainter {
   ) {
     final Paint paint = Paint();
 
-    paint.color = ColorsApp.purple128;
+    paint.color = backgroundColor;
     paint.isAntiAlias = true;
 
     //Background
@@ -87,7 +89,7 @@ class CirclePainter extends CustomPainter {
           textPainter2.width,
       (size.height - textPainter.height) / 2 + textPainter.height + 2,
     );
-    
+
     textPainter2.paint(canvas, offset2);
   }
 

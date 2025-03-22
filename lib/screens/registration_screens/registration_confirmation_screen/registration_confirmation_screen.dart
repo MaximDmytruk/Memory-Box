@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:memory_box/constants/colors_app/colors_app.dart';
 import 'package:memory_box/constants/fonts/inter_font.dart';
-import 'package:memory_box/screens/welcome_screen/welcome_screen.dart';
+import 'package:memory_box/screens/registration_screens/welcome_screen/welcome_screen.dart';
 import 'package:memory_box/widgets/buttons/custom_elevated_button.dart';
 import 'package:memory_box/widgets/containers/container_info.dart';
 import 'package:memory_box/widgets/backgrounds/custom_background/custom_background.dart';
