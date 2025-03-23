@@ -18,14 +18,133 @@ class AudioRecordingsScreen extends StatefulWidget {
 class _AudioRecordingsScreenState extends State<AudioRecordingsScreen> {
   double heightPaint = 0.33;
 
+  @override
+  void initState() {
+    super.initState();
+  }
+
   void _iconMenuButtonAction() {
     Scaffold.of(context).openDrawer();
   }
 
-  @override
-  void initState() {
-    
-    super.initState();
+  void itemPlayTap(String name) {
+    if (entry == null) {
+      showOverlay(name);
+      print('Play tap');
+    } else {
+      updateOverlay(name);
+      print('Play Update tap');
+    }
+  }
+
+  //OVERLAY:
+  String currentName = '';
+  OverlayEntry? entry;
+
+  double navBarHeight = kBottomNavigationBarHeight;
+  Offset offset = Offset(0, 150);
+  void showOverlay(String name) {
+    currentName = name;
+    Size size = MediaQuery.of(context).size;
+    double navBarHeight = kBottomNavigationBarHeight;
+
+    entry = OverlayEntry(builder: (
+      BuildContext context,
+    ) {
+      return Positioned(
+        top: offset.dy,
+        child: SizedBox(
+          width: size.width,
+          child: GestureDetector(
+            onPanUpdate: (details) {
+              // offset += details.delta;
+              // offset = Offset(0, offset.dy);
+              offset = Offset(
+                0,
+                offset.dy + details.delta.dy,
+              );
+              entry!.markNeedsBuild();
+            },
+            child: Material(
+              color: ColorsApp.transparent,
+              child: Container(
+                padding: EdgeInsets.all(12.0),
+                height: 80.0,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: ColorsApp.black58WithOpaciti008,
+                      blurRadius: 11,
+                      spreadRadius: 0.0,
+                    )
+                  ],
+                  borderRadius: BorderRadius.circular(
+                    71.0,
+                  ),
+                  color: Colors.amber,
+                  gradient: LinearGradient(
+                    colors: [
+                      ColorsApp.purple140,
+                      ColorsApp.purple108,
+                    ],
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                  ),
+                ),
+                child: Row(
+                  spacing: 24,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(6),
+                      height: 50.0,
+                      width: 50.0,
+                      decoration: BoxDecoration(
+                        color: ColorsApp.white246,
+                        shape: BoxShape.circle,
+                      ),
+                      child: SvgPicture.asset(
+                        IconsApp.pause,
+                        colorFilter: const ColorFilter.mode(
+                          ColorsApp.purple140,
+                          BlendMode.srcIn,
+                        ),
+                      ),
+                    ),
+                    Text(
+                      currentName,
+                      style: customTextStyle(
+                        color: ColorsApp.white246,
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: hideOverlay,
+                      icon: Icon(
+                        Icons.close,
+                        color: ColorsApp.white246,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+    });
+
+    final OverlayState overlay = Overlay.of(context)!;
+    overlay.insert(entry!);
+  }
+
+  void updateOverlay(String name) {
+    currentName = name;
+    entry?.markNeedsBuild();
+  }
+
+  void hideOverlay() {
+    entry?.remove();
+    entry = null;
   }
 
   @override
@@ -101,8 +220,11 @@ class _AudioRecordingsScreenState extends State<AudioRecordingsScreen> {
               child: ListView.separated(
                 itemBuilder: (BuildContext context, index) {
                   return AudioItem(
-                    name: 'Name',
+                    name: 'Name $index',
                     time: 'time',
+                    onPlayTap: () {
+                      itemPlayTap('Name index = $index');
+                    },
                   );
                 },
                 separatorBuilder: (BuildContext context, index) {

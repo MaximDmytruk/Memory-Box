@@ -7,11 +7,13 @@ import 'package:memory_box/constants/icons_app/icons_app.dart';
 class AudioItem extends StatelessWidget {
   final String name;
   final String time;
+  final GestureTapCallback? onPlayTap;
 
   const AudioItem({
     super.key,
     required this.name,
     required this.time,
+    this.onPlayTap,
   });
 
   @override
@@ -31,7 +33,8 @@ class AudioItem extends StatelessWidget {
       child: Row(
         spacing: 18.0,
         children: [
-          SvgPicture.asset(IconsApp.playPurple),
+          InkWell(
+              onTap: onPlayTap, child: SvgPicture.asset(IconsApp.playPurple)),
           Column(
             spacing: 3,
             crossAxisAlignment: CrossAxisAlignment.start,
