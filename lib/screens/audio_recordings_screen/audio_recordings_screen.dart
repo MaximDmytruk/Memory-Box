@@ -4,6 +4,7 @@ import 'package:memory_box/constants/colors_app/colors_app.dart';
 import 'package:memory_box/constants/fonts/inter_font.dart';
 import 'package:memory_box/constants/icons_app/icons_app.dart';
 import 'package:memory_box/screens/audio_recordings_screen/widgets/play_all_repeat_button.dart';
+import 'package:memory_box/screens/main_screen/widgets/audio_item.dart';
 import 'package:memory_box/widgets/app_bars/custom_app_bar.dart';
 import 'package:memory_box/widgets/backgrounds/custom_background/custom_background.dart';
 
@@ -31,7 +32,7 @@ class _AudioRecordingsScreenState extends State<AudioRecordingsScreen> {
       child: Padding(
         padding: const EdgeInsets.only(
           top: 67.0,
-          bottom: 47.0,
+        
           left: 16.0,
           right: 16.0,
         ),
@@ -51,14 +52,14 @@ class _AudioRecordingsScreenState extends State<AudioRecordingsScreen> {
             Text(
               'Все в одному місці',
               style: customTextStyle(
-                fontSize: 16.0,
-                fontWeight: FontWeight.w400,
-                color: ColorsApp.white246,
-              ),
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w500,
+                  color: ColorsApp.white246,
+                  letterSpacing: 1.5),
             ),
             // SizedBox(height: 30,),
             SizedBox(
-              height: size.height * heightPaint * 0.1,
+              height: size.height * heightPaint * 0.13,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(
@@ -86,6 +87,25 @@ class _AudioRecordingsScreenState extends State<AudioRecordingsScreen> {
                   Spacer(),
                   PlayAllRepeatButton(),
                 ],
+              ),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Expanded(
+              child: ListView.separated(
+                itemBuilder: (BuildContext context, index) {
+                  return AudioItem(
+                    name: 'Name',
+                    time: 'time',
+                  );
+                },
+                separatorBuilder: (BuildContext context, index) {
+                  return SizedBox(
+                    height: 8,
+                  );
+                },
+                itemCount: 50,
               ),
             )
           ],

@@ -52,8 +52,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   'Твоя частинка',
                   style: customTextStyle(
                     fontSize: 16.0,
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w500,
                     color: ColorsApp.white246,
+                    letterSpacing: 1.5
                   ),
                 ),
                 SizedBox(
