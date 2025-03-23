@@ -27,7 +27,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         boxShadow: [
           BoxShadow(
             color: ColorsApp.black.withAlpha(50),
-            blurRadius: 50,
+            blurRadius: 35,
             spreadRadius: 10,
           ),
         ],

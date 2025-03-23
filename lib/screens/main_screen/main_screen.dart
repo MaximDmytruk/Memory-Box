@@ -4,6 +4,7 @@ import 'package:memory_box/constants/colors_app/colors_app.dart';
 import 'package:memory_box/constants/fonts/inter_font.dart';
 import 'package:memory_box/constants/icons_app/icons_app.dart';
 import 'package:memory_box/screens/main_screen/widgets/custom_audio_list_view.dart';
+import 'package:memory_box/screens/main_screen/widgets/empty_collection_container.dart';
 import 'package:memory_box/screens/registration_screens/registration_screen/widgets/custom_text_button.dart';
 import 'package:memory_box/widgets/backgrounds/custom_background/custom_background.dart';
 import 'package:memory_box/widgets/buttons/custom_text_with_underline_button.dart';
@@ -76,44 +77,25 @@ class _MainScreenState extends State<MainScreen> {
                   height: size.height * 0.267,
                   child: Row(
                     spacing: 16.0,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Expanded(
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 40.0),
-                          decoration: BoxDecoration(
-                            color: ColorsApp.greenWithOpaciti075,
-                            borderRadius: BorderRadius.circular(
-                              30.0,
-                            ),
-                          ),
-                          child: Column(
-                            spacing: 47.0,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Тут буде твій набір казок',
-                                style: customTextStyle(
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.w500,
-                                  color: ColorsApp.white246,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                              CustomTextWithUnderlineButton(
-                                name: 'Добавити',
-                              ),
-                            ],
-                          ),
-                        ),
+                      EmptyCollectionContainer(
+                        title: 'Тут буде твій набір казок',
+                        buttonOn: true,
                       ),
                       Expanded(
                         child: Column(
                           spacing: 16.0,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            Expanded(child: Container(color: Colors.blue)),
-                            Expanded(child: Container(color: Colors.amber)),
+                            EmptyCollectionContainer(
+                              title: 'Тут',
+                              backgroundColor: ColorsApp.orange241WithOpaciti075,
+                            ),
+                            EmptyCollectionContainer(
+                              title: 'І тут',
+                              backgroundColor: ColorsApp.blue103WithOpaciti090,
+                            ),
                           ],
                         ),
                       )
