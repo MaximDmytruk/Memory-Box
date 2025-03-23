@@ -7,10 +7,12 @@ import 'package:memory_box/constants/icons_app/icons_app.dart';
 class CustomBottomNavigationBar extends StatefulWidget {
   final int selectedIndex;
   final Function onSelectedTab;
+  final bool isRecordScreenVisible;
   const CustomBottomNavigationBar({
     super.key,
     required this.onSelectedTab,
     required this.selectedIndex,
+    required this.isRecordScreenVisible,
   });
 
   @override
@@ -113,26 +115,52 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               ),
               label: '',
             ),
-            BottomNavigationBarItem(
-              icon: Column(
-                children: [
-                  SvgPicture.asset(
-                    IconsApp.microfoneOrangeBackground,
-                    width: 46.0,
-                    height: 46.0,
-                  ),
-                  Text(
-                    'Запись',
-                    style: customTextStyle(
-                      fontSize: 10.0,
-                      fontWeight: FontWeight.w400,
-                      color: ColorsApp.orange241,
+            widget.isRecordScreenVisible
+                ? BottomNavigationBarItem(
+                    icon: Column(
+                      children: [
+                        Container(
+                          height: 46,
+                          width: 46,
+                          decoration: BoxDecoration(
+                            color: ColorsApp.orange241,
+                            borderRadius: BorderRadius.circular(
+                              20.0,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          '',
+                          style: customTextStyle(
+                            fontSize: 10.0,
+                            fontWeight: FontWeight.w400,
+                            color: ColorsApp.orange241,
+                          ),
+                        ),
+                      ],
                     ),
+                    label: '',
+                  )
+                : BottomNavigationBarItem(
+                    icon: Column(
+                      children: [
+                        SvgPicture.asset(
+                          IconsApp.microfoneOrangeBackground,
+                          width: 46.0,
+                          height: 46.0,
+                        ),
+                        Text(
+                          'Запись',
+                          style: customTextStyle(
+                            fontSize: 10.0,
+                            fontWeight: FontWeight.w400,
+                            color: ColorsApp.orange241,
+                          ),
+                        ),
+                      ],
+                    ),
+                    label: '',
                   ),
-                ],
-              ),
-              label: '',
-            ),
             BottomNavigationBarItem(
               icon: Column(
                 children: [

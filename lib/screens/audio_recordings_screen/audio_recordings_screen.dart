@@ -23,6 +23,12 @@ class _AudioRecordingsScreenState extends State<AudioRecordingsScreen> {
   }
 
   @override
+  void initState() {
+    
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
@@ -32,7 +38,6 @@ class _AudioRecordingsScreenState extends State<AudioRecordingsScreen> {
       child: Padding(
         padding: const EdgeInsets.only(
           top: 67.0,
-        
           left: 16.0,
           right: 16.0,
         ),

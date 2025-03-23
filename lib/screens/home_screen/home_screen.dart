@@ -21,30 +21,45 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
-  bool _isPanelVisible = false;
+  bool isRecordScreenVisible = false;
+  PersistentBottomSheetController? _bottomSheetController;
 
   @override
   void initState() {
     super.initState();
   }
 
-  void turnOnOffVisibility() {
-    if (_isPanelVisible == true) {
-      setState(() {
-        _isPanelVisible = false;
-      });
+  void toggleBottomSheet(BuildContext context) {
+    if (isRecordScreenVisible) {
+      _bottomSheetController?.close();
+      isRecordScreenVisible = false;
+      setState(
+        () {},
+      );
     } else {
-      setState(() {
-        _isPanelVisible = true;
+      _bottomSheetController = showBottomSheet(
+        context: context,
+        backgroundColor: ColorsApp.transparent,
+        builder: (BuildContext context) {
+          return RecordScreen();
+        },
+      );
+      isRecordScreenVisible = true;
+      setState(
+        () {},
+      );
+      _bottomSheetController?.closed.then((_) {
+        isRecordScreenVisible = false;
+        setState(
+          () {},
+        );
       });
     }
   }
 
   void onSelectedTab(int index, BuildContext context) {
     if (index == 2) {
-      turnOnOffVisibility();
-
-      showRecordScreen(context);
+      toggleBottomSheet(context);
 
       return;
     }
@@ -73,6 +88,12 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   @override
+  void dispose() {
+    _bottomSheetController?.close();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     double navBarHeight = kBottomNavigationBarHeight;
     Size size = MediaQuery.of(context).size;
@@ -91,20 +112,27 @@ class _HomeScreenState extends State<HomeScreen> {
             bottomNavigationBar: CustomBottomNavigationBar(
               selectedIndex: _selectedIndex,
               onSelectedTab: onSelectedTab,
+              isRecordScreenVisible: isRecordScreenVisible,
             ),
           ),
-          if (_isPanelVisible)
-            Padding(
-              padding: EdgeInsets.only(bottom: navBarHeight+25),
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  height: 50,
-                  width: 5,
-                  color: ColorsApp.orange241,
+          // if (isRecordScreenVisible)
+          Padding(
+            padding: EdgeInsets.only(
+              bottom: navBarHeight + 25,
+            ),
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: AnimatedContainer(
+                curve: Curves.linear,
+                duration: Duration(
+                  milliseconds: 200,
                 ),
+                height: isRecordScreenVisible ? 50 : 0,
+                width: 4,
+                color: ColorsApp.orange241,
               ),
             ),
+          ),
         ],
       ),
     );
