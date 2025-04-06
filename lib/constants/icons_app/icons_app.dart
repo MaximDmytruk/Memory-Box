@@ -20,4 +20,6 @@ class IconsApp {
   static String repeat = 'assets/icons/repeat.svg';
    static String pause = 'assets/icons/pause.svg';
   static String playOrange = 'assets/icons/play_orange.svg';
+    static String download = 'assets/icons/download.svg';
+      static String upload = 'assets/icons/upload.svg';
 }

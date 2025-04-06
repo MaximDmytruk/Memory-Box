@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:memory_box/constants/colors_app/colors_app.dart';
-import 'package:memory_box/screens/audio_recordings_screen/audio_recordings_screen.dart';
+import 'package:memory_box/screens/audios_screen/audios_screen.dart';
 import 'package:memory_box/screens/collection_screen/collection_screen.dart';
 import 'package:memory_box/screens/main_screen/main_screen.dart';
 import 'package:memory_box/screens/profile_screen/profile_screen.dart';
-import 'package:memory_box/screens/record_audio_screen/record_audio_screen.dart';
+import 'package:memory_box/screens/record_screen/background.dart';
 
 import 'package:memory_box/widgets/backgrounds/custom_background/custom_background.dart';
 import 'package:memory_box/widgets/navigations_bars/custom_bottom_navigation_bar/custom_bottom_navigation_bar.dart';
@@ -40,8 +40,9 @@ class _HomeScreenState extends State<HomeScreen> {
       _bottomSheetController = showBottomSheet(
         context: context,
         backgroundColor: ColorsApp.transparent,
+        enableDrag: false,
         builder: (BuildContext context) {
-          return RecordScreen();
+          return RecordBackground();
         },
       );
       isRecordScreenVisible = true;
@@ -77,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
         return CollectionScreen();
 
       case 3:
-        return AudioRecordingsScreen();
+        return AudiosScreen();
       case 4:
         return ProfileScreen();
       default:

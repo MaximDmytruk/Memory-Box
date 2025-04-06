@@ -41,8 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    //TODO: //  context.read<AuthBloc>().add(AuthEvent.registerUser(email: email, password: password, name: name));    - виклик блоку.!!
-
+   
     return Scaffold(
       body: listSplash[Random().nextInt(listSplash.length)],
     );

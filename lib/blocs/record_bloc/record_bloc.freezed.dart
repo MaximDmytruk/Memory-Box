@@ -18,51 +18,60 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$RecordEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
     required TResult Function() startRecording,
     required TResult Function() stopRecording,
-    required TResult Function() playAudio,
+    required TResult Function(String audioPath) playAudio,
+    required TResult Function(List<double> amplitudeHistory)
+        updateAmplitudeHistory,
+    required TResult Function(int recordingDuration) updateRecordingDuration,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
     TResult? Function()? startRecording,
     TResult? Function()? stopRecording,
-    TResult? Function()? playAudio,
+    TResult? Function(String audioPath)? playAudio,
+    TResult? Function(List<double> amplitudeHistory)? updateAmplitudeHistory,
+    TResult? Function(int recordingDuration)? updateRecordingDuration,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function()? startRecording,
     TResult Function()? stopRecording,
-    TResult Function()? playAudio,
+    TResult Function(String audioPath)? playAudio,
+    TResult Function(List<double> amplitudeHistory)? updateAmplitudeHistory,
+    TResult Function(int recordingDuration)? updateRecordingDuration,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
     required TResult Function(_StartRecording value) startRecording,
     required TResult Function(_StopRecording value) stopRecording,
     required TResult Function(_PlayAudio value) playAudio,
+    required TResult Function(_UpdateAmplitudeHistory value)
+        updateAmplitudeHistory,
+    required TResult Function(_UpdateRecordingDuration value)
+        updateRecordingDuration,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
     TResult? Function(_StartRecording value)? startRecording,
     TResult? Function(_StopRecording value)? stopRecording,
     TResult? Function(_PlayAudio value)? playAudio,
+    TResult? Function(_UpdateAmplitudeHistory value)? updateAmplitudeHistory,
+    TResult? Function(_UpdateRecordingDuration value)? updateRecordingDuration,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_StartRecording value)? startRecording,
     TResult Function(_StopRecording value)? stopRecording,
     TResult Function(_PlayAudio value)? playAudio,
+    TResult Function(_UpdateAmplitudeHistory value)? updateAmplitudeHistory,
+    TResult Function(_UpdateRecordingDuration value)? updateRecordingDuration,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -87,123 +96,6 @@ class _$RecordEventCopyWithImpl<$Res, $Val extends RecordEvent>
 
   /// Create a copy of RecordEvent
   /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-abstract class _$$StartedImplCopyWith<$Res> {
-  factory _$$StartedImplCopyWith(
-          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
-      __$$StartedImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$StartedImplCopyWithImpl<$Res>
-    extends _$RecordEventCopyWithImpl<$Res, _$StartedImpl>
-    implements _$$StartedImplCopyWith<$Res> {
-  __$$StartedImplCopyWithImpl(
-      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RecordEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$StartedImpl implements _Started {
-  const _$StartedImpl();
-
-  @override
-  String toString() {
-    return 'RecordEvent.started()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StartedImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function() startRecording,
-    required TResult Function() stopRecording,
-    required TResult Function() playAudio,
-  }) {
-    return started();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function()? startRecording,
-    TResult? Function()? stopRecording,
-    TResult? Function()? playAudio,
-  }) {
-    return started?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function()? startRecording,
-    TResult Function()? stopRecording,
-    TResult Function()? playAudio,
-    required TResult orElse(),
-  }) {
-    if (started != null) {
-      return started();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_StartRecording value) startRecording,
-    required TResult Function(_StopRecording value) stopRecording,
-    required TResult Function(_PlayAudio value) playAudio,
-  }) {
-    return started(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_StartRecording value)? startRecording,
-    TResult? Function(_StopRecording value)? stopRecording,
-    TResult? Function(_PlayAudio value)? playAudio,
-  }) {
-    return started?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_StartRecording value)? startRecording,
-    TResult Function(_StopRecording value)? stopRecording,
-    TResult Function(_PlayAudio value)? playAudio,
-    required TResult orElse(),
-  }) {
-    if (started != null) {
-      return started(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Started implements RecordEvent {
-  const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc
@@ -247,10 +139,12 @@ class _$StartRecordingImpl implements _StartRecording {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
     required TResult Function() startRecording,
     required TResult Function() stopRecording,
-    required TResult Function() playAudio,
+    required TResult Function(String audioPath) playAudio,
+    required TResult Function(List<double> amplitudeHistory)
+        updateAmplitudeHistory,
+    required TResult Function(int recordingDuration) updateRecordingDuration,
   }) {
     return startRecording();
   }
@@ -258,10 +152,11 @@ class _$StartRecordingImpl implements _StartRecording {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
     TResult? Function()? startRecording,
     TResult? Function()? stopRecording,
-    TResult? Function()? playAudio,
+    TResult? Function(String audioPath)? playAudio,
+    TResult? Function(List<double> amplitudeHistory)? updateAmplitudeHistory,
+    TResult? Function(int recordingDuration)? updateRecordingDuration,
   }) {
     return startRecording?.call();
   }
@@ -269,10 +164,11 @@ class _$StartRecordingImpl implements _StartRecording {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function()? startRecording,
     TResult Function()? stopRecording,
-    TResult Function()? playAudio,
+    TResult Function(String audioPath)? playAudio,
+    TResult Function(List<double> amplitudeHistory)? updateAmplitudeHistory,
+    TResult Function(int recordingDuration)? updateRecordingDuration,
     required TResult orElse(),
   }) {
     if (startRecording != null) {
@@ -284,10 +180,13 @@ class _$StartRecordingImpl implements _StartRecording {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
     required TResult Function(_StartRecording value) startRecording,
     required TResult Function(_StopRecording value) stopRecording,
     required TResult Function(_PlayAudio value) playAudio,
+    required TResult Function(_UpdateAmplitudeHistory value)
+        updateAmplitudeHistory,
+    required TResult Function(_UpdateRecordingDuration value)
+        updateRecordingDuration,
   }) {
     return startRecording(this);
   }
@@ -295,10 +194,11 @@ class _$StartRecordingImpl implements _StartRecording {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
     TResult? Function(_StartRecording value)? startRecording,
     TResult? Function(_StopRecording value)? stopRecording,
     TResult? Function(_PlayAudio value)? playAudio,
+    TResult? Function(_UpdateAmplitudeHistory value)? updateAmplitudeHistory,
+    TResult? Function(_UpdateRecordingDuration value)? updateRecordingDuration,
   }) {
     return startRecording?.call(this);
   }
@@ -306,10 +206,11 @@ class _$StartRecordingImpl implements _StartRecording {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_StartRecording value)? startRecording,
     TResult Function(_StopRecording value)? stopRecording,
     TResult Function(_PlayAudio value)? playAudio,
+    TResult Function(_UpdateAmplitudeHistory value)? updateAmplitudeHistory,
+    TResult Function(_UpdateRecordingDuration value)? updateRecordingDuration,
     required TResult orElse(),
   }) {
     if (startRecording != null) {
@@ -364,10 +265,12 @@ class _$StopRecordingImpl implements _StopRecording {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
     required TResult Function() startRecording,
     required TResult Function() stopRecording,
-    required TResult Function() playAudio,
+    required TResult Function(String audioPath) playAudio,
+    required TResult Function(List<double> amplitudeHistory)
+        updateAmplitudeHistory,
+    required TResult Function(int recordingDuration) updateRecordingDuration,
   }) {
     return stopRecording();
   }
@@ -375,10 +278,11 @@ class _$StopRecordingImpl implements _StopRecording {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
     TResult? Function()? startRecording,
     TResult? Function()? stopRecording,
-    TResult? Function()? playAudio,
+    TResult? Function(String audioPath)? playAudio,
+    TResult? Function(List<double> amplitudeHistory)? updateAmplitudeHistory,
+    TResult? Function(int recordingDuration)? updateRecordingDuration,
   }) {
     return stopRecording?.call();
   }
@@ -386,10 +290,11 @@ class _$StopRecordingImpl implements _StopRecording {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function()? startRecording,
     TResult Function()? stopRecording,
-    TResult Function()? playAudio,
+    TResult Function(String audioPath)? playAudio,
+    TResult Function(List<double> amplitudeHistory)? updateAmplitudeHistory,
+    TResult Function(int recordingDuration)? updateRecordingDuration,
     required TResult orElse(),
   }) {
     if (stopRecording != null) {
@@ -401,10 +306,13 @@ class _$StopRecordingImpl implements _StopRecording {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
     required TResult Function(_StartRecording value) startRecording,
     required TResult Function(_StopRecording value) stopRecording,
     required TResult Function(_PlayAudio value) playAudio,
+    required TResult Function(_UpdateAmplitudeHistory value)
+        updateAmplitudeHistory,
+    required TResult Function(_UpdateRecordingDuration value)
+        updateRecordingDuration,
   }) {
     return stopRecording(this);
   }
@@ -412,10 +320,11 @@ class _$StopRecordingImpl implements _StopRecording {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
     TResult? Function(_StartRecording value)? startRecording,
     TResult? Function(_StopRecording value)? stopRecording,
     TResult? Function(_PlayAudio value)? playAudio,
+    TResult? Function(_UpdateAmplitudeHistory value)? updateAmplitudeHistory,
+    TResult? Function(_UpdateRecordingDuration value)? updateRecordingDuration,
   }) {
     return stopRecording?.call(this);
   }
@@ -423,10 +332,11 @@ class _$StopRecordingImpl implements _StopRecording {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_StartRecording value)? startRecording,
     TResult Function(_StopRecording value)? stopRecording,
     TResult Function(_PlayAudio value)? playAudio,
+    TResult Function(_UpdateAmplitudeHistory value)? updateAmplitudeHistory,
+    TResult Function(_UpdateRecordingDuration value)? updateRecordingDuration,
     required TResult orElse(),
   }) {
     if (stopRecording != null) {
@@ -445,6 +355,8 @@ abstract class _$$PlayAudioImplCopyWith<$Res> {
   factory _$$PlayAudioImplCopyWith(
           _$PlayAudioImpl value, $Res Function(_$PlayAudioImpl) then) =
       __$$PlayAudioImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String audioPath});
 }
 
 /// @nodoc
@@ -457,60 +369,90 @@ class __$$PlayAudioImplCopyWithImpl<$Res>
 
   /// Create a copy of RecordEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? audioPath = null,
+  }) {
+    return _then(_$PlayAudioImpl(
+      audioPath: null == audioPath
+          ? _value.audioPath
+          : audioPath // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$PlayAudioImpl implements _PlayAudio {
-  const _$PlayAudioImpl();
+  const _$PlayAudioImpl({required this.audioPath});
+
+  @override
+  final String audioPath;
 
   @override
   String toString() {
-    return 'RecordEvent.playAudio()';
+    return 'RecordEvent.playAudio(audioPath: $audioPath)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$PlayAudioImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$PlayAudioImpl &&
+            (identical(other.audioPath, audioPath) ||
+                other.audioPath == audioPath));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, audioPath);
+
+  /// Create a copy of RecordEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PlayAudioImplCopyWith<_$PlayAudioImpl> get copyWith =>
+      __$$PlayAudioImplCopyWithImpl<_$PlayAudioImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
     required TResult Function() startRecording,
     required TResult Function() stopRecording,
-    required TResult Function() playAudio,
+    required TResult Function(String audioPath) playAudio,
+    required TResult Function(List<double> amplitudeHistory)
+        updateAmplitudeHistory,
+    required TResult Function(int recordingDuration) updateRecordingDuration,
   }) {
-    return playAudio();
+    return playAudio(audioPath);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
     TResult? Function()? startRecording,
     TResult? Function()? stopRecording,
-    TResult? Function()? playAudio,
+    TResult? Function(String audioPath)? playAudio,
+    TResult? Function(List<double> amplitudeHistory)? updateAmplitudeHistory,
+    TResult? Function(int recordingDuration)? updateRecordingDuration,
   }) {
-    return playAudio?.call();
+    return playAudio?.call(audioPath);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function()? startRecording,
     TResult Function()? stopRecording,
-    TResult Function()? playAudio,
+    TResult Function(String audioPath)? playAudio,
+    TResult Function(List<double> amplitudeHistory)? updateAmplitudeHistory,
+    TResult Function(int recordingDuration)? updateRecordingDuration,
     required TResult orElse(),
   }) {
     if (playAudio != null) {
-      return playAudio();
+      return playAudio(audioPath);
     }
     return orElse();
   }
@@ -518,10 +460,13 @@ class _$PlayAudioImpl implements _PlayAudio {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
     required TResult Function(_StartRecording value) startRecording,
     required TResult Function(_StopRecording value) stopRecording,
     required TResult Function(_PlayAudio value) playAudio,
+    required TResult Function(_UpdateAmplitudeHistory value)
+        updateAmplitudeHistory,
+    required TResult Function(_UpdateRecordingDuration value)
+        updateRecordingDuration,
   }) {
     return playAudio(this);
   }
@@ -529,10 +474,11 @@ class _$PlayAudioImpl implements _PlayAudio {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
     TResult? Function(_StartRecording value)? startRecording,
     TResult? Function(_StopRecording value)? stopRecording,
     TResult? Function(_PlayAudio value)? playAudio,
+    TResult? Function(_UpdateAmplitudeHistory value)? updateAmplitudeHistory,
+    TResult? Function(_UpdateRecordingDuration value)? updateRecordingDuration,
   }) {
     return playAudio?.call(this);
   }
@@ -540,10 +486,11 @@ class _$PlayAudioImpl implements _PlayAudio {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_StartRecording value)? startRecording,
     TResult Function(_StopRecording value)? stopRecording,
     TResult Function(_PlayAudio value)? playAudio,
+    TResult Function(_UpdateAmplitudeHistory value)? updateAmplitudeHistory,
+    TResult Function(_UpdateRecordingDuration value)? updateRecordingDuration,
     required TResult orElse(),
   }) {
     if (playAudio != null) {
@@ -554,13 +501,366 @@ class _$PlayAudioImpl implements _PlayAudio {
 }
 
 abstract class _PlayAudio implements RecordEvent {
-  const factory _PlayAudio() = _$PlayAudioImpl;
+  const factory _PlayAudio({required final String audioPath}) = _$PlayAudioImpl;
+
+  String get audioPath;
+
+  /// Create a copy of RecordEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PlayAudioImplCopyWith<_$PlayAudioImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateAmplitudeHistoryImplCopyWith<$Res> {
+  factory _$$UpdateAmplitudeHistoryImplCopyWith(
+          _$UpdateAmplitudeHistoryImpl value,
+          $Res Function(_$UpdateAmplitudeHistoryImpl) then) =
+      __$$UpdateAmplitudeHistoryImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<double> amplitudeHistory});
+}
+
+/// @nodoc
+class __$$UpdateAmplitudeHistoryImplCopyWithImpl<$Res>
+    extends _$RecordEventCopyWithImpl<$Res, _$UpdateAmplitudeHistoryImpl>
+    implements _$$UpdateAmplitudeHistoryImplCopyWith<$Res> {
+  __$$UpdateAmplitudeHistoryImplCopyWithImpl(
+      _$UpdateAmplitudeHistoryImpl _value,
+      $Res Function(_$UpdateAmplitudeHistoryImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of RecordEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? amplitudeHistory = null,
+  }) {
+    return _then(_$UpdateAmplitudeHistoryImpl(
+      amplitudeHistory: null == amplitudeHistory
+          ? _value._amplitudeHistory
+          : amplitudeHistory // ignore: cast_nullable_to_non_nullable
+              as List<double>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateAmplitudeHistoryImpl implements _UpdateAmplitudeHistory {
+  const _$UpdateAmplitudeHistoryImpl(
+      {required final List<double> amplitudeHistory})
+      : _amplitudeHistory = amplitudeHistory;
+
+  final List<double> _amplitudeHistory;
+  @override
+  List<double> get amplitudeHistory {
+    if (_amplitudeHistory is EqualUnmodifiableListView)
+      return _amplitudeHistory;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_amplitudeHistory);
+  }
+
+  @override
+  String toString() {
+    return 'RecordEvent.updateAmplitudeHistory(amplitudeHistory: $amplitudeHistory)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateAmplitudeHistoryImpl &&
+            const DeepCollectionEquality()
+                .equals(other._amplitudeHistory, _amplitudeHistory));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_amplitudeHistory));
+
+  /// Create a copy of RecordEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateAmplitudeHistoryImplCopyWith<_$UpdateAmplitudeHistoryImpl>
+      get copyWith => __$$UpdateAmplitudeHistoryImplCopyWithImpl<
+          _$UpdateAmplitudeHistoryImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() startRecording,
+    required TResult Function() stopRecording,
+    required TResult Function(String audioPath) playAudio,
+    required TResult Function(List<double> amplitudeHistory)
+        updateAmplitudeHistory,
+    required TResult Function(int recordingDuration) updateRecordingDuration,
+  }) {
+    return updateAmplitudeHistory(amplitudeHistory);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? startRecording,
+    TResult? Function()? stopRecording,
+    TResult? Function(String audioPath)? playAudio,
+    TResult? Function(List<double> amplitudeHistory)? updateAmplitudeHistory,
+    TResult? Function(int recordingDuration)? updateRecordingDuration,
+  }) {
+    return updateAmplitudeHistory?.call(amplitudeHistory);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? startRecording,
+    TResult Function()? stopRecording,
+    TResult Function(String audioPath)? playAudio,
+    TResult Function(List<double> amplitudeHistory)? updateAmplitudeHistory,
+    TResult Function(int recordingDuration)? updateRecordingDuration,
+    required TResult orElse(),
+  }) {
+    if (updateAmplitudeHistory != null) {
+      return updateAmplitudeHistory(amplitudeHistory);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_StartRecording value) startRecording,
+    required TResult Function(_StopRecording value) stopRecording,
+    required TResult Function(_PlayAudio value) playAudio,
+    required TResult Function(_UpdateAmplitudeHistory value)
+        updateAmplitudeHistory,
+    required TResult Function(_UpdateRecordingDuration value)
+        updateRecordingDuration,
+  }) {
+    return updateAmplitudeHistory(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_StartRecording value)? startRecording,
+    TResult? Function(_StopRecording value)? stopRecording,
+    TResult? Function(_PlayAudio value)? playAudio,
+    TResult? Function(_UpdateAmplitudeHistory value)? updateAmplitudeHistory,
+    TResult? Function(_UpdateRecordingDuration value)? updateRecordingDuration,
+  }) {
+    return updateAmplitudeHistory?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_StartRecording value)? startRecording,
+    TResult Function(_StopRecording value)? stopRecording,
+    TResult Function(_PlayAudio value)? playAudio,
+    TResult Function(_UpdateAmplitudeHistory value)? updateAmplitudeHistory,
+    TResult Function(_UpdateRecordingDuration value)? updateRecordingDuration,
+    required TResult orElse(),
+  }) {
+    if (updateAmplitudeHistory != null) {
+      return updateAmplitudeHistory(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateAmplitudeHistory implements RecordEvent {
+  const factory _UpdateAmplitudeHistory(
+          {required final List<double> amplitudeHistory}) =
+      _$UpdateAmplitudeHistoryImpl;
+
+  List<double> get amplitudeHistory;
+
+  /// Create a copy of RecordEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateAmplitudeHistoryImplCopyWith<_$UpdateAmplitudeHistoryImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateRecordingDurationImplCopyWith<$Res> {
+  factory _$$UpdateRecordingDurationImplCopyWith(
+          _$UpdateRecordingDurationImpl value,
+          $Res Function(_$UpdateRecordingDurationImpl) then) =
+      __$$UpdateRecordingDurationImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int recordingDuration});
+}
+
+/// @nodoc
+class __$$UpdateRecordingDurationImplCopyWithImpl<$Res>
+    extends _$RecordEventCopyWithImpl<$Res, _$UpdateRecordingDurationImpl>
+    implements _$$UpdateRecordingDurationImplCopyWith<$Res> {
+  __$$UpdateRecordingDurationImplCopyWithImpl(
+      _$UpdateRecordingDurationImpl _value,
+      $Res Function(_$UpdateRecordingDurationImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of RecordEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? recordingDuration = null,
+  }) {
+    return _then(_$UpdateRecordingDurationImpl(
+      recordingDuration: null == recordingDuration
+          ? _value.recordingDuration
+          : recordingDuration // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateRecordingDurationImpl implements _UpdateRecordingDuration {
+  const _$UpdateRecordingDurationImpl({required this.recordingDuration});
+
+  @override
+  final int recordingDuration;
+
+  @override
+  String toString() {
+    return 'RecordEvent.updateRecordingDuration(recordingDuration: $recordingDuration)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateRecordingDurationImpl &&
+            (identical(other.recordingDuration, recordingDuration) ||
+                other.recordingDuration == recordingDuration));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, recordingDuration);
+
+  /// Create a copy of RecordEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateRecordingDurationImplCopyWith<_$UpdateRecordingDurationImpl>
+      get copyWith => __$$UpdateRecordingDurationImplCopyWithImpl<
+          _$UpdateRecordingDurationImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() startRecording,
+    required TResult Function() stopRecording,
+    required TResult Function(String audioPath) playAudio,
+    required TResult Function(List<double> amplitudeHistory)
+        updateAmplitudeHistory,
+    required TResult Function(int recordingDuration) updateRecordingDuration,
+  }) {
+    return updateRecordingDuration(recordingDuration);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? startRecording,
+    TResult? Function()? stopRecording,
+    TResult? Function(String audioPath)? playAudio,
+    TResult? Function(List<double> amplitudeHistory)? updateAmplitudeHistory,
+    TResult? Function(int recordingDuration)? updateRecordingDuration,
+  }) {
+    return updateRecordingDuration?.call(recordingDuration);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? startRecording,
+    TResult Function()? stopRecording,
+    TResult Function(String audioPath)? playAudio,
+    TResult Function(List<double> amplitudeHistory)? updateAmplitudeHistory,
+    TResult Function(int recordingDuration)? updateRecordingDuration,
+    required TResult orElse(),
+  }) {
+    if (updateRecordingDuration != null) {
+      return updateRecordingDuration(recordingDuration);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_StartRecording value) startRecording,
+    required TResult Function(_StopRecording value) stopRecording,
+    required TResult Function(_PlayAudio value) playAudio,
+    required TResult Function(_UpdateAmplitudeHistory value)
+        updateAmplitudeHistory,
+    required TResult Function(_UpdateRecordingDuration value)
+        updateRecordingDuration,
+  }) {
+    return updateRecordingDuration(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_StartRecording value)? startRecording,
+    TResult? Function(_StopRecording value)? stopRecording,
+    TResult? Function(_PlayAudio value)? playAudio,
+    TResult? Function(_UpdateAmplitudeHistory value)? updateAmplitudeHistory,
+    TResult? Function(_UpdateRecordingDuration value)? updateRecordingDuration,
+  }) {
+    return updateRecordingDuration?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_StartRecording value)? startRecording,
+    TResult Function(_StopRecording value)? stopRecording,
+    TResult Function(_PlayAudio value)? playAudio,
+    TResult Function(_UpdateAmplitudeHistory value)? updateAmplitudeHistory,
+    TResult Function(_UpdateRecordingDuration value)? updateRecordingDuration,
+    required TResult orElse(),
+  }) {
+    if (updateRecordingDuration != null) {
+      return updateRecordingDuration(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateRecordingDuration implements RecordEvent {
+  const factory _UpdateRecordingDuration(
+      {required final int recordingDuration}) = _$UpdateRecordingDurationImpl;
+
+  int get recordingDuration;
+
+  /// Create a copy of RecordEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateRecordingDurationImplCopyWith<_$UpdateRecordingDurationImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$RecordState {
   RecordStatus get status => throw _privateConstructorUsedError;
+  String? get audioPath => throw _privateConstructorUsedError;
   String? get errorText => throw _privateConstructorUsedError;
+  List<double> get amplitudeHistory => throw _privateConstructorUsedError;
+  int get recordingDuration => throw _privateConstructorUsedError;
 
   /// Create a copy of RecordState
   /// with the given fields replaced by the non-null parameter values.
@@ -575,7 +875,12 @@ abstract class $RecordStateCopyWith<$Res> {
           RecordState value, $Res Function(RecordState) then) =
       _$RecordStateCopyWithImpl<$Res, RecordState>;
   @useResult
-  $Res call({RecordStatus status, String? errorText});
+  $Res call(
+      {RecordStatus status,
+      String? audioPath,
+      String? errorText,
+      List<double> amplitudeHistory,
+      int recordingDuration});
 }
 
 /// @nodoc
@@ -594,17 +899,32 @@ class _$RecordStateCopyWithImpl<$Res, $Val extends RecordState>
   @override
   $Res call({
     Object? status = null,
+    Object? audioPath = freezed,
     Object? errorText = freezed,
+    Object? amplitudeHistory = null,
+    Object? recordingDuration = null,
   }) {
     return _then(_value.copyWith(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as RecordStatus,
+      audioPath: freezed == audioPath
+          ? _value.audioPath
+          : audioPath // ignore: cast_nullable_to_non_nullable
+              as String?,
       errorText: freezed == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
               as String?,
+      amplitudeHistory: null == amplitudeHistory
+          ? _value.amplitudeHistory
+          : amplitudeHistory // ignore: cast_nullable_to_non_nullable
+              as List<double>,
+      recordingDuration: null == recordingDuration
+          ? _value.recordingDuration
+          : recordingDuration // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -617,7 +937,12 @@ abstract class _$$RecordStateImplCopyWith<$Res>
       __$$RecordStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({RecordStatus status, String? errorText});
+  $Res call(
+      {RecordStatus status,
+      String? audioPath,
+      String? errorText,
+      List<double> amplitudeHistory,
+      int recordingDuration});
 }
 
 /// @nodoc
@@ -634,17 +959,32 @@ class __$$RecordStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = null,
+    Object? audioPath = freezed,
     Object? errorText = freezed,
+    Object? amplitudeHistory = null,
+    Object? recordingDuration = null,
   }) {
     return _then(_$RecordStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as RecordStatus,
+      audioPath: freezed == audioPath
+          ? _value.audioPath
+          : audioPath // ignore: cast_nullable_to_non_nullable
+              as String?,
       errorText: freezed == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
               as String?,
+      amplitudeHistory: null == amplitudeHistory
+          ? _value._amplitudeHistory
+          : amplitudeHistory // ignore: cast_nullable_to_non_nullable
+              as List<double>,
+      recordingDuration: null == recordingDuration
+          ? _value.recordingDuration
+          : recordingDuration // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -652,17 +992,38 @@ class __$$RecordStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$RecordStateImpl implements _RecordState {
-  const _$RecordStateImpl({this.status = RecordStatus.initial, this.errorText});
+  const _$RecordStateImpl(
+      {this.status = RecordStatus.initial,
+      this.audioPath,
+      this.errorText,
+      final List<double> amplitudeHistory = const [],
+      this.recordingDuration = 0})
+      : _amplitudeHistory = amplitudeHistory;
 
   @override
   @JsonKey()
   final RecordStatus status;
   @override
+  final String? audioPath;
+  @override
   final String? errorText;
+  final List<double> _amplitudeHistory;
+  @override
+  @JsonKey()
+  List<double> get amplitudeHistory {
+    if (_amplitudeHistory is EqualUnmodifiableListView)
+      return _amplitudeHistory;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_amplitudeHistory);
+  }
+
+  @override
+  @JsonKey()
+  final int recordingDuration;
 
   @override
   String toString() {
-    return 'RecordState(status: $status, errorText: $errorText)';
+    return 'RecordState(status: $status, audioPath: $audioPath, errorText: $errorText, amplitudeHistory: $amplitudeHistory, recordingDuration: $recordingDuration)';
   }
 
   @override
@@ -671,12 +1032,24 @@ class _$RecordStateImpl implements _RecordState {
         (other.runtimeType == runtimeType &&
             other is _$RecordStateImpl &&
             (identical(other.status, status) || other.status == status) &&
+            (identical(other.audioPath, audioPath) ||
+                other.audioPath == audioPath) &&
             (identical(other.errorText, errorText) ||
-                other.errorText == errorText));
+                other.errorText == errorText) &&
+            const DeepCollectionEquality()
+                .equals(other._amplitudeHistory, _amplitudeHistory) &&
+            (identical(other.recordingDuration, recordingDuration) ||
+                other.recordingDuration == recordingDuration));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status, errorText);
+  int get hashCode => Object.hash(
+      runtimeType,
+      status,
+      audioPath,
+      errorText,
+      const DeepCollectionEquality().hash(_amplitudeHistory),
+      recordingDuration);
 
   /// Create a copy of RecordState
   /// with the given fields replaced by the non-null parameter values.
@@ -689,12 +1062,22 @@ class _$RecordStateImpl implements _RecordState {
 
 abstract class _RecordState implements RecordState {
   const factory _RecordState(
-      {final RecordStatus status, final String? errorText}) = _$RecordStateImpl;
+      {final RecordStatus status,
+      final String? audioPath,
+      final String? errorText,
+      final List<double> amplitudeHistory,
+      final int recordingDuration}) = _$RecordStateImpl;
 
   @override
   RecordStatus get status;
   @override
+  String? get audioPath;
+  @override
   String? get errorText;
+  @override
+  List<double> get amplitudeHistory;
+  @override
+  int get recordingDuration;
 
   /// Create a copy of RecordState
   /// with the given fields replaced by the non-null parameter values.
