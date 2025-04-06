@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:memory_box/blocs/auth_bloc/auth_bloc.dart';
+import 'package:memory_box/blocs/bloc/main_screen_bloc.dart';
+import 'package:memory_box/blocs/registration_bloc/registration_bloc.dart';
 import 'package:memory_box/blocs/recording_screen_bloc/recording_screen_bloc.dart';
 import 'package:memory_box/blocs/player_bloc/player_bloc.dart';
 import 'package:memory_box/blocs/record_bloc/record_bloc.dart';
@@ -36,9 +38,15 @@ class MainApp extends StatelessWidget {
           create: (context) => AuthBloc(),
         ),
         BlocProvider(
+          create: (context) => RegistrationBloc(),
+        ),
+        BlocProvider(
           create: (context) => RecordBloc(
             audioRepository: audioRepository,
           ),
+        ),
+        BlocProvider(
+          create: (context) => MainScreenBloc(audioRepository: audioRepository,),
         ),
         BlocProvider(
           create: (context) => PlayerBloc(),

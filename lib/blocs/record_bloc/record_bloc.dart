@@ -16,7 +16,9 @@ class RecordBloc extends Bloc<RecordEvent, RecordState> {
 
   RecordBloc({
     required this.audioRepository,
-  }) : super(const RecordState()) {
+  }) : super(
+          const RecordState(),
+        ) {
     on<_StartRecording>(_startRecording);
     on<_StopRecording>(_stopRecording);
     on<_UpdateAmplitudeHistory>(_updateAmplitudeHistory);

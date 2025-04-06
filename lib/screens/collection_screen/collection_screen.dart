@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:memory_box/blocs/auth_bloc/auth_bloc.dart';
 import 'package:memory_box/constants/colors_app/colors_app.dart';
 import 'package:memory_box/constants/fonts/inter_font.dart';
 import 'package:memory_box/constants/icons_app/icons_app.dart';
@@ -51,7 +53,28 @@ class _CollectionScreenState extends State<CollectionScreen> {
                     color: ColorsApp.white246,
                     letterSpacing: 1.5),
               ),
-              CollectionListView()
+              BlocBuilder<AuthBloc, AuthState>(
+                builder: (context, state) {
+                  if (state.status == AuthStatus.authorized) {
+                    return CollectionListView();
+                  } else if (state.status == AuthStatus.guest) {
+                    return Expanded(
+                      child: Center(
+                        child: Text(
+                          'Guest',
+                          style: customTextStyle(fontSize: 36),
+                        ),
+                      ),
+                    );
+                  } else {
+                    return Center(
+                      child: Text(
+                        'Error',
+                      ),
+                    );
+                  }
+                },
+              )
             ],
           ),
         ),
