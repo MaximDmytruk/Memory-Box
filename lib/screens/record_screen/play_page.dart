@@ -61,9 +61,6 @@ class _PlayPageState extends State<PlayPage> {
       builder: (context, recordState) {
         return BlocBuilder<PlayerBloc, PlayerState>(
           builder: (context, playerState) {
-            final double audioPosition = playerState.audioPosition ?? 0.0;
-            final double audioDuration = playerState.audioDuration ?? 1.0;
-
             return Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               spacing: 24,
@@ -107,18 +104,18 @@ class _PlayPageState extends State<PlayPage> {
                   ),
                 ),
                 // Slider(
-                //   value: audioPosition,
+                //   value: 5,
                 //   min: 0.0,
                 //   max: audioDuration,
-                //   onChanged: (double newValue) {
-                //     setState(() {
-                //       context.read<PlayerBloc>().add(PlayerEvent.seekToPosition(position: newValue));
-                //     });
-                //   },
+                //   onChanged: (double newValue) {},
+                // ),
+                // Text(
+                //   '$audioPosition / ${audioDuration.toStringAsFixed(2)}',
+                //   style: TextStyle(fontSize: 16.0, color: ColorsApp.black58),
                 // ),
                 Text(
-                  '${audioPosition.toStringAsFixed(2)} / ${audioDuration.toStringAsFixed(2)}',
-                  style: TextStyle(fontSize: 16.0, color: ColorsApp.black58),
+                  '${playerState.audioPosition?.toStringAsFixed(0) ?? "0"}s / ${playerState.audioDuration?.toStringAsFixed(0) ?? "0"}s',
+                  style: TextStyle(fontSize: 24),
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,

@@ -23,6 +23,7 @@ mixin _$PlayerEvent {
     required TResult Function(double position) seekToPosition,
     required TResult Function() pauseAudio,
     required TResult Function(String audioPath) getAudioDuration,
+    required TResult Function(double position) playerPositionChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +33,7 @@ mixin _$PlayerEvent {
     TResult? Function(double position)? seekToPosition,
     TResult? Function()? pauseAudio,
     TResult? Function(String audioPath)? getAudioDuration,
+    TResult? Function(double position)? playerPositionChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +43,7 @@ mixin _$PlayerEvent {
     TResult Function(double position)? seekToPosition,
     TResult Function()? pauseAudio,
     TResult Function(String audioPath)? getAudioDuration,
+    TResult Function(double position)? playerPositionChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +54,8 @@ mixin _$PlayerEvent {
     required TResult Function(_SeekToPosition value) seekToPosition,
     required TResult Function(_PauseAudio value) pauseAudio,
     required TResult Function(_GetAudioDuration value) getAudioDuration,
+    required TResult Function(_PlayerPositionChanged value)
+        playerPositionChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +65,7 @@ mixin _$PlayerEvent {
     TResult? Function(_SeekToPosition value)? seekToPosition,
     TResult? Function(_PauseAudio value)? pauseAudio,
     TResult? Function(_GetAudioDuration value)? getAudioDuration,
+    TResult? Function(_PlayerPositionChanged value)? playerPositionChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +75,7 @@ mixin _$PlayerEvent {
     TResult Function(_SeekToPosition value)? seekToPosition,
     TResult Function(_PauseAudio value)? pauseAudio,
     TResult Function(_GetAudioDuration value)? getAudioDuration,
+    TResult Function(_PlayerPositionChanged value)? playerPositionChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -169,6 +176,7 @@ class _$PlayAudioImpl implements _PlayAudio {
     required TResult Function(double position) seekToPosition,
     required TResult Function() pauseAudio,
     required TResult Function(String audioPath) getAudioDuration,
+    required TResult Function(double position) playerPositionChanged,
   }) {
     return playAudio(audioPath);
   }
@@ -181,6 +189,7 @@ class _$PlayAudioImpl implements _PlayAudio {
     TResult? Function(double position)? seekToPosition,
     TResult? Function()? pauseAudio,
     TResult? Function(String audioPath)? getAudioDuration,
+    TResult? Function(double position)? playerPositionChanged,
   }) {
     return playAudio?.call(audioPath);
   }
@@ -193,6 +202,7 @@ class _$PlayAudioImpl implements _PlayAudio {
     TResult Function(double position)? seekToPosition,
     TResult Function()? pauseAudio,
     TResult Function(String audioPath)? getAudioDuration,
+    TResult Function(double position)? playerPositionChanged,
     required TResult orElse(),
   }) {
     if (playAudio != null) {
@@ -209,6 +219,8 @@ class _$PlayAudioImpl implements _PlayAudio {
     required TResult Function(_SeekToPosition value) seekToPosition,
     required TResult Function(_PauseAudio value) pauseAudio,
     required TResult Function(_GetAudioDuration value) getAudioDuration,
+    required TResult Function(_PlayerPositionChanged value)
+        playerPositionChanged,
   }) {
     return playAudio(this);
   }
@@ -221,6 +233,7 @@ class _$PlayAudioImpl implements _PlayAudio {
     TResult? Function(_SeekToPosition value)? seekToPosition,
     TResult? Function(_PauseAudio value)? pauseAudio,
     TResult? Function(_GetAudioDuration value)? getAudioDuration,
+    TResult? Function(_PlayerPositionChanged value)? playerPositionChanged,
   }) {
     return playAudio?.call(this);
   }
@@ -233,6 +246,7 @@ class _$PlayAudioImpl implements _PlayAudio {
     TResult Function(_SeekToPosition value)? seekToPosition,
     TResult Function(_PauseAudio value)? pauseAudio,
     TResult Function(_GetAudioDuration value)? getAudioDuration,
+    TResult Function(_PlayerPositionChanged value)? playerPositionChanged,
     required TResult orElse(),
   }) {
     if (playAudio != null) {
@@ -300,6 +314,7 @@ class _$StopPlayingImpl implements _StopPlaying {
     required TResult Function(double position) seekToPosition,
     required TResult Function() pauseAudio,
     required TResult Function(String audioPath) getAudioDuration,
+    required TResult Function(double position) playerPositionChanged,
   }) {
     return stopPlaying();
   }
@@ -312,6 +327,7 @@ class _$StopPlayingImpl implements _StopPlaying {
     TResult? Function(double position)? seekToPosition,
     TResult? Function()? pauseAudio,
     TResult? Function(String audioPath)? getAudioDuration,
+    TResult? Function(double position)? playerPositionChanged,
   }) {
     return stopPlaying?.call();
   }
@@ -324,6 +340,7 @@ class _$StopPlayingImpl implements _StopPlaying {
     TResult Function(double position)? seekToPosition,
     TResult Function()? pauseAudio,
     TResult Function(String audioPath)? getAudioDuration,
+    TResult Function(double position)? playerPositionChanged,
     required TResult orElse(),
   }) {
     if (stopPlaying != null) {
@@ -340,6 +357,8 @@ class _$StopPlayingImpl implements _StopPlaying {
     required TResult Function(_SeekToPosition value) seekToPosition,
     required TResult Function(_PauseAudio value) pauseAudio,
     required TResult Function(_GetAudioDuration value) getAudioDuration,
+    required TResult Function(_PlayerPositionChanged value)
+        playerPositionChanged,
   }) {
     return stopPlaying(this);
   }
@@ -352,6 +371,7 @@ class _$StopPlayingImpl implements _StopPlaying {
     TResult? Function(_SeekToPosition value)? seekToPosition,
     TResult? Function(_PauseAudio value)? pauseAudio,
     TResult? Function(_GetAudioDuration value)? getAudioDuration,
+    TResult? Function(_PlayerPositionChanged value)? playerPositionChanged,
   }) {
     return stopPlaying?.call(this);
   }
@@ -364,6 +384,7 @@ class _$StopPlayingImpl implements _StopPlaying {
     TResult Function(_SeekToPosition value)? seekToPosition,
     TResult Function(_PauseAudio value)? pauseAudio,
     TResult Function(_GetAudioDuration value)? getAudioDuration,
+    TResult Function(_PlayerPositionChanged value)? playerPositionChanged,
     required TResult orElse(),
   }) {
     if (stopPlaying != null) {
@@ -452,6 +473,7 @@ class _$SeekToPositionImpl implements _SeekToPosition {
     required TResult Function(double position) seekToPosition,
     required TResult Function() pauseAudio,
     required TResult Function(String audioPath) getAudioDuration,
+    required TResult Function(double position) playerPositionChanged,
   }) {
     return seekToPosition(position);
   }
@@ -464,6 +486,7 @@ class _$SeekToPositionImpl implements _SeekToPosition {
     TResult? Function(double position)? seekToPosition,
     TResult? Function()? pauseAudio,
     TResult? Function(String audioPath)? getAudioDuration,
+    TResult? Function(double position)? playerPositionChanged,
   }) {
     return seekToPosition?.call(position);
   }
@@ -476,6 +499,7 @@ class _$SeekToPositionImpl implements _SeekToPosition {
     TResult Function(double position)? seekToPosition,
     TResult Function()? pauseAudio,
     TResult Function(String audioPath)? getAudioDuration,
+    TResult Function(double position)? playerPositionChanged,
     required TResult orElse(),
   }) {
     if (seekToPosition != null) {
@@ -492,6 +516,8 @@ class _$SeekToPositionImpl implements _SeekToPosition {
     required TResult Function(_SeekToPosition value) seekToPosition,
     required TResult Function(_PauseAudio value) pauseAudio,
     required TResult Function(_GetAudioDuration value) getAudioDuration,
+    required TResult Function(_PlayerPositionChanged value)
+        playerPositionChanged,
   }) {
     return seekToPosition(this);
   }
@@ -504,6 +530,7 @@ class _$SeekToPositionImpl implements _SeekToPosition {
     TResult? Function(_SeekToPosition value)? seekToPosition,
     TResult? Function(_PauseAudio value)? pauseAudio,
     TResult? Function(_GetAudioDuration value)? getAudioDuration,
+    TResult? Function(_PlayerPositionChanged value)? playerPositionChanged,
   }) {
     return seekToPosition?.call(this);
   }
@@ -516,6 +543,7 @@ class _$SeekToPositionImpl implements _SeekToPosition {
     TResult Function(_SeekToPosition value)? seekToPosition,
     TResult Function(_PauseAudio value)? pauseAudio,
     TResult Function(_GetAudioDuration value)? getAudioDuration,
+    TResult Function(_PlayerPositionChanged value)? playerPositionChanged,
     required TResult orElse(),
   }) {
     if (seekToPosition != null) {
@@ -583,6 +611,7 @@ class _$PauseAudioImpl implements _PauseAudio {
     required TResult Function(double position) seekToPosition,
     required TResult Function() pauseAudio,
     required TResult Function(String audioPath) getAudioDuration,
+    required TResult Function(double position) playerPositionChanged,
   }) {
     return pauseAudio();
   }
@@ -595,6 +624,7 @@ class _$PauseAudioImpl implements _PauseAudio {
     TResult? Function(double position)? seekToPosition,
     TResult? Function()? pauseAudio,
     TResult? Function(String audioPath)? getAudioDuration,
+    TResult? Function(double position)? playerPositionChanged,
   }) {
     return pauseAudio?.call();
   }
@@ -607,6 +637,7 @@ class _$PauseAudioImpl implements _PauseAudio {
     TResult Function(double position)? seekToPosition,
     TResult Function()? pauseAudio,
     TResult Function(String audioPath)? getAudioDuration,
+    TResult Function(double position)? playerPositionChanged,
     required TResult orElse(),
   }) {
     if (pauseAudio != null) {
@@ -623,6 +654,8 @@ class _$PauseAudioImpl implements _PauseAudio {
     required TResult Function(_SeekToPosition value) seekToPosition,
     required TResult Function(_PauseAudio value) pauseAudio,
     required TResult Function(_GetAudioDuration value) getAudioDuration,
+    required TResult Function(_PlayerPositionChanged value)
+        playerPositionChanged,
   }) {
     return pauseAudio(this);
   }
@@ -635,6 +668,7 @@ class _$PauseAudioImpl implements _PauseAudio {
     TResult? Function(_SeekToPosition value)? seekToPosition,
     TResult? Function(_PauseAudio value)? pauseAudio,
     TResult? Function(_GetAudioDuration value)? getAudioDuration,
+    TResult? Function(_PlayerPositionChanged value)? playerPositionChanged,
   }) {
     return pauseAudio?.call(this);
   }
@@ -647,6 +681,7 @@ class _$PauseAudioImpl implements _PauseAudio {
     TResult Function(_SeekToPosition value)? seekToPosition,
     TResult Function(_PauseAudio value)? pauseAudio,
     TResult Function(_GetAudioDuration value)? getAudioDuration,
+    TResult Function(_PlayerPositionChanged value)? playerPositionChanged,
     required TResult orElse(),
   }) {
     if (pauseAudio != null) {
@@ -735,6 +770,7 @@ class _$GetAudioDurationImpl implements _GetAudioDuration {
     required TResult Function(double position) seekToPosition,
     required TResult Function() pauseAudio,
     required TResult Function(String audioPath) getAudioDuration,
+    required TResult Function(double position) playerPositionChanged,
   }) {
     return getAudioDuration(audioPath);
   }
@@ -747,6 +783,7 @@ class _$GetAudioDurationImpl implements _GetAudioDuration {
     TResult? Function(double position)? seekToPosition,
     TResult? Function()? pauseAudio,
     TResult? Function(String audioPath)? getAudioDuration,
+    TResult? Function(double position)? playerPositionChanged,
   }) {
     return getAudioDuration?.call(audioPath);
   }
@@ -759,6 +796,7 @@ class _$GetAudioDurationImpl implements _GetAudioDuration {
     TResult Function(double position)? seekToPosition,
     TResult Function()? pauseAudio,
     TResult Function(String audioPath)? getAudioDuration,
+    TResult Function(double position)? playerPositionChanged,
     required TResult orElse(),
   }) {
     if (getAudioDuration != null) {
@@ -775,6 +813,8 @@ class _$GetAudioDurationImpl implements _GetAudioDuration {
     required TResult Function(_SeekToPosition value) seekToPosition,
     required TResult Function(_PauseAudio value) pauseAudio,
     required TResult Function(_GetAudioDuration value) getAudioDuration,
+    required TResult Function(_PlayerPositionChanged value)
+        playerPositionChanged,
   }) {
     return getAudioDuration(this);
   }
@@ -787,6 +827,7 @@ class _$GetAudioDurationImpl implements _GetAudioDuration {
     TResult? Function(_SeekToPosition value)? seekToPosition,
     TResult? Function(_PauseAudio value)? pauseAudio,
     TResult? Function(_GetAudioDuration value)? getAudioDuration,
+    TResult? Function(_PlayerPositionChanged value)? playerPositionChanged,
   }) {
     return getAudioDuration?.call(this);
   }
@@ -799,6 +840,7 @@ class _$GetAudioDurationImpl implements _GetAudioDuration {
     TResult Function(_SeekToPosition value)? seekToPosition,
     TResult Function(_PauseAudio value)? pauseAudio,
     TResult Function(_GetAudioDuration value)? getAudioDuration,
+    TResult Function(_PlayerPositionChanged value)? playerPositionChanged,
     required TResult orElse(),
   }) {
     if (getAudioDuration != null) {
@@ -819,6 +861,175 @@ abstract class _GetAudioDuration implements PlayerEvent {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAudioDurationImplCopyWith<_$GetAudioDurationImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$PlayerPositionChangedImplCopyWith<$Res> {
+  factory _$$PlayerPositionChangedImplCopyWith(
+          _$PlayerPositionChangedImpl value,
+          $Res Function(_$PlayerPositionChangedImpl) then) =
+      __$$PlayerPositionChangedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({double position});
+}
+
+/// @nodoc
+class __$$PlayerPositionChangedImplCopyWithImpl<$Res>
+    extends _$PlayerEventCopyWithImpl<$Res, _$PlayerPositionChangedImpl>
+    implements _$$PlayerPositionChangedImplCopyWith<$Res> {
+  __$$PlayerPositionChangedImplCopyWithImpl(_$PlayerPositionChangedImpl _value,
+      $Res Function(_$PlayerPositionChangedImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PlayerEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? position = null,
+  }) {
+    return _then(_$PlayerPositionChangedImpl(
+      position: null == position
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PlayerPositionChangedImpl implements _PlayerPositionChanged {
+  const _$PlayerPositionChangedImpl({required this.position});
+
+  @override
+  final double position;
+
+  @override
+  String toString() {
+    return 'PlayerEvent.playerPositionChanged(position: $position)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PlayerPositionChangedImpl &&
+            (identical(other.position, position) ||
+                other.position == position));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, position);
+
+  /// Create a copy of PlayerEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PlayerPositionChangedImplCopyWith<_$PlayerPositionChangedImpl>
+      get copyWith => __$$PlayerPositionChangedImplCopyWithImpl<
+          _$PlayerPositionChangedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String audioPath) playAudio,
+    required TResult Function() stopPlaying,
+    required TResult Function(double position) seekToPosition,
+    required TResult Function() pauseAudio,
+    required TResult Function(String audioPath) getAudioDuration,
+    required TResult Function(double position) playerPositionChanged,
+  }) {
+    return playerPositionChanged(position);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String audioPath)? playAudio,
+    TResult? Function()? stopPlaying,
+    TResult? Function(double position)? seekToPosition,
+    TResult? Function()? pauseAudio,
+    TResult? Function(String audioPath)? getAudioDuration,
+    TResult? Function(double position)? playerPositionChanged,
+  }) {
+    return playerPositionChanged?.call(position);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String audioPath)? playAudio,
+    TResult Function()? stopPlaying,
+    TResult Function(double position)? seekToPosition,
+    TResult Function()? pauseAudio,
+    TResult Function(String audioPath)? getAudioDuration,
+    TResult Function(double position)? playerPositionChanged,
+    required TResult orElse(),
+  }) {
+    if (playerPositionChanged != null) {
+      return playerPositionChanged(position);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PlayAudio value) playAudio,
+    required TResult Function(_StopPlaying value) stopPlaying,
+    required TResult Function(_SeekToPosition value) seekToPosition,
+    required TResult Function(_PauseAudio value) pauseAudio,
+    required TResult Function(_GetAudioDuration value) getAudioDuration,
+    required TResult Function(_PlayerPositionChanged value)
+        playerPositionChanged,
+  }) {
+    return playerPositionChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PlayAudio value)? playAudio,
+    TResult? Function(_StopPlaying value)? stopPlaying,
+    TResult? Function(_SeekToPosition value)? seekToPosition,
+    TResult? Function(_PauseAudio value)? pauseAudio,
+    TResult? Function(_GetAudioDuration value)? getAudioDuration,
+    TResult? Function(_PlayerPositionChanged value)? playerPositionChanged,
+  }) {
+    return playerPositionChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PlayAudio value)? playAudio,
+    TResult Function(_StopPlaying value)? stopPlaying,
+    TResult Function(_SeekToPosition value)? seekToPosition,
+    TResult Function(_PauseAudio value)? pauseAudio,
+    TResult Function(_GetAudioDuration value)? getAudioDuration,
+    TResult Function(_PlayerPositionChanged value)? playerPositionChanged,
+    required TResult orElse(),
+  }) {
+    if (playerPositionChanged != null) {
+      return playerPositionChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PlayerPositionChanged implements PlayerEvent {
+  const factory _PlayerPositionChanged({required final double position}) =
+      _$PlayerPositionChangedImpl;
+
+  double get position;
+
+  /// Create a copy of PlayerEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PlayerPositionChangedImplCopyWith<_$PlayerPositionChangedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

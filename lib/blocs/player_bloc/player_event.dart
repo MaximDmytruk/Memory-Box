@@ -7,4 +7,5 @@ class PlayerEvent with _$PlayerEvent {
   const factory PlayerEvent.seekToPosition(double position) = _SeekToPosition;
   const factory PlayerEvent.pauseAudio() = _PauseAudio;
   const factory PlayerEvent.getAudioDuration({required String audioPath}) = _GetAudioDuration;
+  const factory PlayerEvent.playerPositionChanged({required double position}) = _PlayerPositionChanged;
 }
