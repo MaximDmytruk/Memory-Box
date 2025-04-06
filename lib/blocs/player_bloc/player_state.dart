@@ -4,6 +4,7 @@ enum PlayerStatus {
   initial,
   playing,
   stopPlaying,
+  paused,
   error,
 }
 

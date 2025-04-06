@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -18,16 +16,30 @@ class PlayPage extends StatefulWidget {
 }
 
 class _PlayPageState extends State<PlayPage> {
-  // double sliderValue = 0.0;
+  late String audioPath;
+
+  @override
+  void initState() {
+    super.initState();
+    audioPath = context.read<RecordingScreenBloc>().state.audioPath;
+    if (audioPath.isNotEmpty) {
+      context.read<PlayerBloc>().add(
+            PlayerEvent.getAudioDuration(
+              audioPath: audioPath,
+            ),
+          );
+    }
+  }
 
   @override
   void dispose() {
     super.dispose();
   }
 
-  void playIconAction({
-    required String audioPath,
-  }) {
+  void playIconAction({required String audioPath}) {
+    print('');
+    print('AUDIOPATH');
+    print(audioPath);
     context.read<PlayerBloc>().add(
           PlayerEvent.playAudio(
             audioPath: audioPath,
@@ -36,18 +48,8 @@ class _PlayPageState extends State<PlayPage> {
   }
 
   void pauseIconAction() {
-    context.read<PlayerBloc>().add(
-          PlayerEvent.stopPlaying(),
-        );
+    context.read<PlayerBloc>().add(PlayerEvent.stopPlaying());
   }
-
-  // void onSliderChanged(double value) {
-  //   setState(() {
-  //     sliderValue = value;
-  //   });
-
-  //   context.read<PlayerBloc>().add(PlayerEvent.seekToPosition(value));
-  // }
 
   void deleteAction() {}
   void downloadAction() {}
@@ -59,9 +61,9 @@ class _PlayPageState extends State<PlayPage> {
       builder: (context, recordState) {
         return BlocBuilder<PlayerBloc, PlayerState>(
           builder: (context, playerState) {
-            // if (playerState.status == PlayerStatus.playing) {
-            //   sliderValue = playerState.audioPosition ?? 0.0;
-            // }
+            final double audioPosition = playerState.audioPosition ?? 0.0;
+            final double audioDuration = playerState.audioDuration ?? 1.0;
+
             return Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               spacing: 24,
@@ -104,26 +106,18 @@ class _PlayPageState extends State<PlayPage> {
                     letterSpacing: 2,
                   ),
                 ),
-                Slider(
-                  value: 1,
-                  min: 0.0,
-                  max: playerState.audioDuration ?? 100.0,
-                  onChanged: (double newValue) {
-                    setState(() {});
-                  },
-                ),
                 // Slider(
-                //   value: 1,
+                //   value: audioPosition,
                 //   min: 0.0,
-                //   max: playerState.audioDuration ?? 100.0,
-                //   onChanged: onSliderChanged,
+                //   max: audioDuration,
+                //   onChanged: (double newValue) {
+                //     setState(() {
+                //       context.read<PlayerBloc>().add(PlayerEvent.seekToPosition(position: newValue));
+                //     });
+                //   },
                 // ),
                 Text(
-                  playerState.audioPosition.toString(),
-                  style: TextStyle(fontSize: 16.0, color: ColorsApp.black58),
-                ),
-                Text(
-                  playerState.audioDuration.toString(),
+                  '${audioPosition.toStringAsFixed(2)} / ${audioDuration.toStringAsFixed(2)}',
                   style: TextStyle(fontSize: 16.0, color: ColorsApp.black58),
                 ),
                 Align(
@@ -136,9 +130,7 @@ class _PlayPageState extends State<PlayPage> {
                             width: 80.0,
                             padding: EdgeInsets.all(12),
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(
-                                50,
-                              ),
+                              borderRadius: BorderRadius.circular(50),
                               color: ColorsApp.orange241,
                             ),
                             child: SvgPicture.asset(
@@ -152,9 +144,7 @@ class _PlayPageState extends State<PlayPage> {
                         )
                       : InkWell(
                           onTap: () {
-                            playIconAction(
-                              audioPath: recordState.audioPath,
-                            );
+                            playIconAction(audioPath: recordState.audioPath);
                           },
                           child: SvgPicture.asset(
                             IconsApp.playOrange,

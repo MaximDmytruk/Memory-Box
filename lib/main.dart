@@ -31,7 +31,9 @@ class MainApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => RecordBloc(audioRepository: audioRepository),
+          create: (context) => RecordBloc(
+            audioRepository: audioRepository,
+          ),
         ),
         BlocProvider(
           create: (context) => PlayerBloc(),

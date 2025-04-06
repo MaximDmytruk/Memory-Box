@@ -55,7 +55,7 @@ class RecordBloc extends Bloc<RecordEvent, RecordState> {
     _recorder.onProgress?.listen((event) {
       Duration recordingDuration = event.duration;
       double amplitude = (event.decibels ?? -60).abs() / 60;
-      if (amplitude < 0.60) {
+      if (amplitude < 0.30) {
         amplitude = 0.0;
       }
 

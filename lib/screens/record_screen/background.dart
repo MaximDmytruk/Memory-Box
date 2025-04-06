@@ -15,7 +15,7 @@ class RecordBackground extends StatefulWidget {
 }
 
 class _RecordBackgroundState extends State<RecordBackground> {
-  Size get size => MediaQuery.of(context).size; //TODO: приклад для SIZE!
+  Size get size => MediaQuery.of(context).size;
 
   @override
   void initState() {
