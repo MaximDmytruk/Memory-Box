@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:memory_box/screens/auth_screen/auth_screen.dart';
 import 'package:memory_box/screens/registration_screens/new_user_meeting_screen/new_user_meeting_screen.dart';
 import 'package:memory_box/screens/splash_screen/widgets/splash_first.dart';
 import 'package:memory_box/screens/splash_screen/widgets/splash_two.dart';
@@ -31,9 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
           seconds: 2,
         ), () {
       if (mounted) {
-        Navigator.of(context).pushReplacementNamed(
-          NewUserMeetingScreen.routeName,
-        );
+        Navigator.of(context).pushReplacementNamed(AuthScreen.routeName,);
       }
     });
     super.initState();
@@ -41,7 +40,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-   
     return Scaffold(
       body: listSplash[Random().nextInt(listSplash.length)],
     );

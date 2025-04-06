@@ -5,6 +5,7 @@ import 'package:memory_box/blocs/recording_screen_bloc/recording_screen_bloc.dar
 import 'package:memory_box/blocs/player_bloc/player_bloc.dart';
 import 'package:memory_box/blocs/record_bloc/record_bloc.dart';
 import 'package:memory_box/repositories/audio_repository.dart';
+import 'package:memory_box/screens/auth_screen/auth_screen.dart';
 import 'package:memory_box/screens/home_screen/home_screen.dart';
 import 'package:memory_box/screens/registration_screens/new_user_meeting_screen/new_user_meeting_screen.dart';
 import 'package:memory_box/screens/registration_screens/registration_confirmation_screen/registration_confirmation_screen.dart';
@@ -52,6 +53,7 @@ class MainApp extends StatelessWidget {
           RegistrationConfirmationScreen.routeName: (context) =>
               RegistrationConfirmationScreen(),
           WelcomeScreen.routeName: (context) => WelcomeScreen(),
+          AuthScreen.routeName: (context) => AuthScreen(),
         },
         initialRoute: SplashScreen.routeName,
       ),

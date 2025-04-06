@@ -158,7 +158,6 @@ class _PlayPageState extends State<PlayPage> {
                     ),
                   ],
                 ),
-             
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: playerState.playing
