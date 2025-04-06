@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -11,6 +12,7 @@ part 'player_bloc.freezed.dart';
 class PlayerBloc extends Bloc<PlayerEvent, PlayerState> {
   final AudioPlayer _player = AudioPlayer();
   StreamSubscription? _positionStreamSubscription;
+  Duration? _pausedPosition;
 
   PlayerBloc() : super(const PlayerState()) {
     on<_PlayAudio>(_playAudio);
@@ -30,51 +32,49 @@ class PlayerBloc extends Bloc<PlayerEvent, PlayerState> {
   }
 
   Future<void> _playAudio(_PlayAudio event, Emitter<PlayerState> emit) async {
-    try {
-      await _player.setUrl(event.audioPath);
-      await _player.play();
-      emit(
-        state.copyWith(
-          status: PlayerStatus.playing,
-          playing: true,
-        ),
-      );
-      _positionStreamSubscription = _player.positionStream.listen(
-        (position) {
-          if (!isClosed) {
-            add(
-              _PlayerPositionChanged(
-                position: position.inSeconds.toDouble(),
-              ),
-            );
-          }
-        },
-        onError: (e) {
-          if (!isClosed) {
-            emit(
-              state.copyWith(
-                status: PlayerStatus.error,
-                errorText: e.toString(),
-              ),
-            );
-          }
-        },
-      );
-    } catch (e) {
-      if (!isClosed) {
-        emit(
-          state.copyWith(
-            status: PlayerStatus.error,
-            errorText: e.toString(),
-          ),
-        );
+    await _player.setUrl(
+      event.audioPath,
+    );
+    // if (_pausedPosition != null) {
+    //   await _player.seek(
+    //     _pausedPosition!,
+    //   );
+
+    //   _pausedPosition = null;
+    // }
+    emit(
+      state.copyWith(
+        status: PlayerStatus.playing,
+        playing: true,
+      ),
+    );
+    await _player.play();
+
+    _player.positionStream.listen(
+      (position) {
+        if (!isClosed) {
+          add(
+            _PlayerPositionChanged(
+              position: position.inSeconds.toDouble(),
+            ),
+          );
+        }
+      },
+    );
+
+    _player.playerStateStream.listen((playerState) {
+      if (playerState.processingState == ProcessingState.completed) {
+        add(PlayerEvent.stopPlaying());
       }
-    }
+    });
   }
 
+
+  //TODO: late 
   Future<void> _pauseAudio(_PauseAudio event, Emitter<PlayerState> emit) async {
     await _player.pause();
-    _positionStreamSubscription?.cancel();
+    _pausedPosition = _player.position;
+    await _positionStreamSubscription?.cancel();
     emit(
       state.copyWith(
         status: PlayerStatus.paused,
@@ -90,6 +90,7 @@ class PlayerBloc extends Bloc<PlayerEvent, PlayerState> {
     emit(
       state.copyWith(
         status: PlayerStatus.stopPlaying,
+        audioPosition: 0,
         playing: false,
       ),
     );

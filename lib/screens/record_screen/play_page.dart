@@ -36,10 +36,9 @@ class _PlayPageState extends State<PlayPage> {
     super.dispose();
   }
 
-  void playIconAction({required String audioPath}) {
-    print('');
-    print('AUDIOPATH');
-    print(audioPath);
+  void playIconAction({
+    required String audioPath,
+  }) {
     context.read<PlayerBloc>().add(
           PlayerEvent.playAudio(
             audioPath: audioPath,
@@ -109,12 +108,9 @@ class _PlayPageState extends State<PlayPage> {
                 //   max: audioDuration,
                 //   onChanged: (double newValue) {},
                 // ),
-                // Text(
-                //   '$audioPosition / ${audioDuration.toStringAsFixed(2)}',
-                //   style: TextStyle(fontSize: 16.0, color: ColorsApp.black58),
-                // ),
+
                 Text(
-                  '${playerState.audioPosition?.toStringAsFixed(0) ?? "0"}s / ${playerState.audioDuration?.toStringAsFixed(0) ?? "0"}s',
+                  '${playerState.audioPosition?.toString() ?? "0"}s / ${playerState.audioDuration?.toString() ?? "0"}s',
                   style: TextStyle(fontSize: 24),
                 ),
                 Align(
@@ -141,7 +137,7 @@ class _PlayPageState extends State<PlayPage> {
                         )
                       : InkWell(
                           onTap: () {
-                            playIconAction(audioPath: recordState.audioPath);
+                            playIconAction(audioPath: recordState.audioPath,);
                           },
                           child: SvgPicture.asset(
                             IconsApp.playOrange,
