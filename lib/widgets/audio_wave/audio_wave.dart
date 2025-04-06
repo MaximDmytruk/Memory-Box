@@ -8,8 +8,12 @@ class AudioWave extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+  
     return CustomPaint(
-      size: Size(double.infinity, 50),
+      size: Size(
+        double.infinity,
+        100,
+      ),
       painter: WaveformPainter(
         amplitudeHistory: amplitudeHistory,
       ),

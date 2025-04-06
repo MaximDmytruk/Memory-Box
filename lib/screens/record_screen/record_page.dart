@@ -36,7 +36,6 @@ class _RecordPageState extends State<RecordPage> {
 
   @override
   void dispose() {
-   
     super.dispose();
   }
 
@@ -97,10 +96,8 @@ class _RecordPageState extends State<RecordPage> {
                   color: ColorsApp.black58,
                   letterSpacing: 2),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 8.0,
-              ),
+            SizedBox(
+              width: double.infinity,
               child: AudioWave(
                 amplitudeHistory: state.amplitudeHistory,
               ),

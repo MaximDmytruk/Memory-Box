@@ -18,8 +18,10 @@ class IconsApp {
   static String photo = 'assets/icons/photo.svg';
   static String dots = 'assets/icons/dots.svg';
   static String repeat = 'assets/icons/repeat.svg';
-   static String pause = 'assets/icons/pause.svg';
+  static String pause = 'assets/icons/pause.svg';
   static String playOrange = 'assets/icons/play_orange.svg';
-    static String download = 'assets/icons/download.svg';
-      static String upload = 'assets/icons/upload.svg';
+  static String download = 'assets/icons/download.svg';
+  static String upload = 'assets/icons/upload.svg';
+  static String skipBack15 = 'assets/icons/skip_back_15.svg';
+   static String skipForward15 = 'assets/icons/skip_forward_15.svg';
 }
