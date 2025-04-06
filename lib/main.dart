@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:memory_box/blocs/auth_bloc/auth_bloc.dart';
 import 'package:memory_box/blocs/recording_screen_bloc/recording_screen_bloc.dart';
 import 'package:memory_box/blocs/player_bloc/player_bloc.dart';
 import 'package:memory_box/blocs/record_bloc/record_bloc.dart';
@@ -31,6 +32,9 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        BlocProvider(
+          create: (context) => AuthBloc(),
+        ),
         BlocProvider(
           create: (context) => RecordBloc(
             audioRepository: audioRepository,
