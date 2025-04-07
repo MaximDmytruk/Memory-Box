@@ -40,10 +40,11 @@ class ProfilePage extends StatelessWidget {
             Text(
               'Твоя частинка',
               style: customTextStyle(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w500,
-                  color: ColorsApp.white246,
-                  letterSpacing: 1.5),
+                fontSize: 16.0,
+                fontWeight: FontWeight.w500,
+                color: ColorsApp.white246,
+                letterSpacing: 1.5,
+              ),
             ),
             SizedBox(
               height: 24.0,

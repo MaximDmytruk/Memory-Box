@@ -14,7 +14,7 @@ class CustomTextFieldWithUnderline extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       style: customTextStyle(
-        fontSize: 30.0,
+        fontSize: 24.0,
         fontWeight: FontWeight.w400,
         color: ColorsApp.black58,
       ),
@@ -25,19 +25,19 @@ class CustomTextFieldWithUnderline extends StatelessWidget {
         border: UnderlineInputBorder(
           borderSide: BorderSide(
             color: ColorsApp.black58WithOpaciti05,
-            width: 1,
+            width: 2,
           ),
         ),
         enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(
             color: ColorsApp.black58WithOpaciti05,
-            width: 1,
+            width: 2,
           ),
         ),
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(
             color: ColorsApp.black58WithOpaciti05,
-            width: 1,
+            width: 2,
           ),
         ),
       ),
