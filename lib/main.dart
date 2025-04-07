@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:memory_box/blocs/auth_bloc/auth_bloc.dart';
-import 'package:memory_box/blocs/bloc/main_screen_bloc.dart';
+import 'package:memory_box/blocs/profile_screen_bloc/profile_screen_bloc.dart';
+import 'package:memory_box/blocs/main_screen_bloc/main_screen_bloc.dart';
 import 'package:memory_box/blocs/registration_bloc/registration_bloc.dart';
 import 'package:memory_box/blocs/recording_screen_bloc/recording_screen_bloc.dart';
 import 'package:memory_box/blocs/player_bloc/player_bloc.dart';
@@ -46,13 +47,18 @@ class MainApp extends StatelessWidget {
           ),
         ),
         BlocProvider(
-          create: (context) => MainScreenBloc(audioRepository: audioRepository,),
+          create: (context) => MainScreenBloc(
+            audioRepository: audioRepository,
+          ),
         ),
         BlocProvider(
           create: (context) => PlayerBloc(),
         ),
         BlocProvider(
           create: (context) => RecordingScreenBloc(),
+        ),
+        BlocProvider(
+          create: (context) => ProfileScreenBloc(),
         ),
       ],
       child: MaterialApp(

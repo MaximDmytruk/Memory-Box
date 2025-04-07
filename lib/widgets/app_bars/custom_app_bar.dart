@@ -8,12 +8,14 @@ class CustomAppBar extends StatelessWidget {
   final String title;
   final VoidCallback? onDrawerIconTap;
   final Widget? leadingChild;
+  final Widget? prefixChild;
 
   const CustomAppBar({
     super.key,
     required this.onDrawerIconTap,
     required this.title,
     this.leadingChild,
+    this.prefixChild,
   });
 
   @override
@@ -21,24 +23,28 @@ class CustomAppBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        IconButton(
-          onPressed: onDrawerIconTap,
-          icon: SvgPicture.asset(
-            IconsApp.menu,
-          ),
-        ),
-        Text(
-          title,
-          style: customTextStyle(
-            fontSize: 36.0,
-            fontWeight: FontWeight.w700,
-            color: ColorsApp.white246,
+        prefixChild ??
+            IconButton(
+              onPressed: onDrawerIconTap,
+              icon: SvgPicture.asset(
+                IconsApp.menu,
+              ),
+            ),
+        Align(
+          alignment: Alignment.center,
+          child: Text(
+            title,
+            style: customTextStyle(
+              fontSize: 36.0,
+              fontWeight: FontWeight.w700,
+              color: ColorsApp.white246,
+            ),
           ),
         ),
         leadingChild ??
             SizedBox(
               width: 50.0,
-              height: 30.0,
+              height: 50.0,
             ),
       ],
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:memory_box/blocs/bloc/main_screen_bloc.dart';
+import 'package:memory_box/blocs/main_screen_bloc/main_screen_bloc.dart';
 import 'package:memory_box/constants/colors_app/colors_app.dart';
 import 'package:memory_box/constants/fonts/inter_font.dart';
 import 'package:memory_box/constants/icons_app/icons_app.dart';
