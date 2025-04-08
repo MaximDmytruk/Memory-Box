@@ -78,10 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void subscriptionAction() {
-    setState(() {
-      _selectedIndex = 5;
-    });
-    Navigator.of(context).pop();
+    Navigator.of(context).pushNamed(SubscriptionScreen.routeName);
   }
 
   Widget? _getScreen(int index) {
@@ -95,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
         return AudiosScreen();
       case 4:
         return ProfileScreen();
-      
+
       default:
         return Center(
           child: Text('Default'),
@@ -127,7 +124,6 @@ class _HomeScreenState extends State<HomeScreen> {
               isRecordScreenVisible: isRecordScreenVisible,
             ),
           ),
-          // if (isRecordScreenVisible)
           Padding(
             padding: EdgeInsets.only(
               bottom: navBarHeight + 25,

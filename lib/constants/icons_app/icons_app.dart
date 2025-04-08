@@ -23,6 +23,9 @@ class IconsApp {
   static String download = 'assets/icons/download.svg';
   static String upload = 'assets/icons/upload.svg';
   static String skipBack15 = 'assets/icons/skip_back_15.svg';
-   static String skipForward15 = 'assets/icons/skip_forward_15.svg';
-    static String backArrowInWhiteRectangle = 'assets/icons/back_arrow_in_white_rectangle.svg';
+  static String skipForward15 = 'assets/icons/skip_forward_15.svg';
+  static String backArrowInWhiteRectangle =
+      'assets/icons/back_arrow_in_white_rectangle.svg';
+  static String selectedCircle = 'assets/icons/selected_circle.svg';
+  static String unselectedCircle = 'assets/icons/unselected_circle.svg';
 }
