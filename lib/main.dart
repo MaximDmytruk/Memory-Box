@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:memory_box/blocs/auth_bloc/auth_bloc.dart';
-import 'package:memory_box/blocs/profile_screen_bloc/profile_screen_bloc.dart';
+import 'package:memory_box/screens/profile_screen/blocs/profile_screen_bloc/profile_screen_bloc.dart';
 import 'package:memory_box/blocs/main_screen_bloc/main_screen_bloc.dart';
 import 'package:memory_box/blocs/registration_bloc/registration_bloc.dart';
 import 'package:memory_box/blocs/recording_screen_bloc/recording_screen_bloc.dart';
@@ -16,6 +16,7 @@ import 'package:memory_box/screens/registration_screens/registration_confirmatio
 import 'package:memory_box/screens/registration_screens/registration_screen/registration_screen.dart';
 import 'package:memory_box/screens/splash_screen/screen/splash_screen.dart';
 import 'package:memory_box/screens/registration_screens/welcome_screen/welcome_screen.dart';
+import 'package:memory_box/screens/subscription_screen/subscription_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -62,6 +63,7 @@ class MainApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: "Memory Box",
         routes: {
           SplashScreen.routeName: (context) => SplashScreen(),
@@ -72,6 +74,7 @@ class MainApp extends StatelessWidget {
               RegistrationConfirmationScreen(),
           WelcomeScreen.routeName: (context) => WelcomeScreen(),
           AuthScreen.routeName: (context) => AuthScreen(),
+          SubscriptionScreen.routeName: (context) => SubscriptionScreen(),
         },
         initialRoute: SplashScreen.routeName,
       ),

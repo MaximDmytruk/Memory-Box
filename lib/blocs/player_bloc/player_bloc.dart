@@ -31,6 +31,7 @@ class PlayerBloc extends Bloc<PlayerEvent, PlayerState> {
     );
   }
 
+  
   Future<void> _playAudio(_PlayAudio event, Emitter<PlayerState> emit) async {
     await _player.setUrl(
       event.audioPath,

@@ -122,6 +122,7 @@ class ProfilePage extends StatelessWidget {
             CustomTextWithUnderlineButton(
               name: 'Підписка',
               color: ColorsApp.black58,
+              onTap: (){},
             ),
             SizedBox(
               height: 110.0,

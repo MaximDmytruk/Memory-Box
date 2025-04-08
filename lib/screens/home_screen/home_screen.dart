@@ -5,6 +5,7 @@ import 'package:memory_box/screens/collection_screen/collection_screen.dart';
 import 'package:memory_box/screens/main_screen/main_screen.dart';
 import 'package:memory_box/screens/profile_screen/profile_screen.dart';
 import 'package:memory_box/screens/record_screen/background.dart';
+import 'package:memory_box/screens/subscription_screen/subscription_screen.dart';
 
 import 'package:memory_box/widgets/backgrounds/custom_background/custom_background.dart';
 import 'package:memory_box/widgets/navigations_bars/custom_bottom_navigation_bar/custom_bottom_navigation_bar.dart';
@@ -27,6 +28,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    _bottomSheetController?.close();
+    super.dispose();
   }
 
   void toggleBottomSheet(BuildContext context) {
@@ -70,6 +77,13 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  void subscriptionAction() {
+    setState(() {
+      _selectedIndex = 5;
+    });
+    Navigator.of(context).pop();
+  }
+
   Widget? _getScreen(int index) {
     switch (index) {
       case 0:
@@ -81,17 +95,12 @@ class _HomeScreenState extends State<HomeScreen> {
         return AudiosScreen();
       case 4:
         return ProfileScreen();
+      
       default:
         return Center(
           child: Text('Default'),
         );
     }
-  }
-
-  @override
-  void dispose() {
-    _bottomSheetController?.close();
-    super.dispose();
   }
 
   @override
@@ -103,7 +112,9 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Stack(
         children: [
           Scaffold(
-            drawer: CustomDrawer(),
+            drawer: CustomDrawer(
+              subscriptionAction: subscriptionAction,
+            ),
             backgroundColor: ColorsApp.transparent,
             body: Center(
               child: _getScreen(

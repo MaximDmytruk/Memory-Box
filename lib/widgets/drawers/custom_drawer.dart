@@ -5,8 +5,12 @@ import 'package:memory_box/constants/fonts/inter_font.dart';
 import 'package:memory_box/constants/icons_app/icons_app.dart';
 
 class CustomDrawer extends StatelessWidget {
+
+  final VoidCallback? subscriptionAction;
+
   const CustomDrawer({
     super.key,
+    this.subscriptionAction,
   });
 
   @override
@@ -36,7 +40,7 @@ class CustomDrawer extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 40.0, //Має бути 40 в загальному
+              height: 40.0,
             ),
             Center(
               child: Text(
@@ -146,7 +150,7 @@ class CustomDrawer extends StatelessWidget {
               height: 50,
             ),
             TextButton.icon(
-              onPressed: () {},
+              onPressed: subscriptionAction,
               label: Text(
                 'Підписка',
                 style: customTextStyle(
